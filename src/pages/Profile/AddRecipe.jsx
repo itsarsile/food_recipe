@@ -4,14 +4,16 @@ import Button from 'react-bootstrap/Button';
 import Image from '../../assets/image/icon_image.png';
 import Film from '../../assets/image/icon_film.png';
 import Footer from '../../components/footer/Footer';
+import Navbar from '../../components/navbar/Navbar';
 
 const AddRecipe = () => {
   return (
     <>
-      <section className="container mt-5 mb-5">
+      <Navbar />
+      <section className="container mt-3 mb-5">
         <Form.Group controlId="formFileLg" className="mb-3">
           <Button variant="light" className="w-100 pt-5 pb-5" style={{background: '#F6F5F4'}}>
-            <img src={Image} className="mb-2" />
+            <img src={Image} className="mb-2" alt="add recipe" />
             <h5 className="text-secondary">Add Photo</h5>
             <Form.Control className="p-1 font-weight-bold" type="file" size="m" />
           </Button>
@@ -24,7 +26,7 @@ const AddRecipe = () => {
         </Form.Group>
         <Form.Group className="mb-3" controlId="exampleForm.ControlInput2">
           <Button variant="light" className="w-100 pt-5 pb-5" style={{background: '#F6F5F4'}}>
-            <img src={Film} className="mb-2" />
+            <img src={Film} className="mb-2" alt="add video" />
             <h5 className="text-secondary">Add Video</h5>
             <Form.Control className="p-1 font-weight-bold" type="file" size="m" />
           </Button>{' '}

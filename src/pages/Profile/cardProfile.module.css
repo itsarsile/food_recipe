@@ -1,20 +1,15 @@
-.menuCard {
-  display: flex;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
-  row-gap: 60px;
-  margin: 70px 0;
+@font-face {
+  font-family: AirbnbCereal;
+  src: url('../../assets/font/AirbnbCereal_W_Md.otf');
 }
 
-.menuCard img {
-  height: 390px;
-  width: 390px;
+html,
+body {
+  font-family: AirbnbCereal;
 }
 
-.menuCard p {
-  margin-top: -100px;
-  padding-left: 30px;
-  font-weight: bold;
-  font-size: 28px;
-  color: #3f3a3a;
+@media (max-width: 575.98px) {
+  button.nav-link {
+    font-size: 13px;
+  }
 }

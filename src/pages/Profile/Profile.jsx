@@ -5,15 +5,18 @@ import Footer from '../../components/footer/Footer';
 import card from '../../assets/image/profileCard.png';
 import ModalChangePict from '../../components/modal/ModalChangePict';
 import {useNavigate} from 'react-router-dom';
+import Style from './cardProfile.module.css';
+import Navbar from '../../components/navbar/Navbar';
 
 const Profile = () => {
   const navigate = useNavigate();
 
   return (
     <>
-      <div className="container">
+      <Navbar />
+      <div className="container" style={Style}>
         <section>
-          <div className="text-center mt-5">
+          <div className="text-center mt-3">
             <img src={picPro} alt="" className="rounded-circle w-50 col-md-2 col-6" />
             <div className="dropleft" style={{marginTop: -30, marginLeft: 130}}>
               <button className="btn btn-outline-light dropdown-toggle rounded-pill" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -35,7 +38,7 @@ const Profile = () => {
         <section className="mb-5">
           <>
             <nav>
-              <div className="nav nav-tabs border-warning" id="nav-tab" role="tablist">
+              <div className="nav nav-tabs border-warning" id="nav-tab-profile" role="tablist">
                 <button className="nav-link font-weight-bold active" id="nav-home-tab" data-toggle="tab" data-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">
                   My Recipe
                 </button>

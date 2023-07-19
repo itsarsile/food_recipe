@@ -1,33 +1,28 @@
-import React from 'react'
-import Styles from '../navbarLogin/Navbar.module.css'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import Styles from './navStyle.css';
+import {useNavigate} from 'react-router-dom';
 
 const Navbar = () => {
-    return (
-        <div className="container mt-5">
-            <nav className="row">
-                <Link to={'/home'} className={Styles.link1}>
-                    Home
-                </Link>
-                <Link to={'/add-recipe'} className={Styles.link1}>
-                    Add Recipe
-                </Link>
-                <Link to={'/profile'} className={Styles.link1}>
-                    Profile
-                </Link>
-                <div className={Styles.lgn}>
-                    <div className={Styles.bul}>
-                        <div className={Styles.icon}>
-                            <i className="fa-regular fa-user fa-lg" />
-                        </div>
-                    </div>
-                    <a className={Styles.link2} href="">
-                        Login
-                    </a>
-                </div>
-            </nav>
-        </div>
-    )
-}
+  const navigate = useNavigate();
 
-export default Navbar
+  return (
+    <div className="container" id="navContainer">
+      <nav className="row d-flex justify-content-between">
+        <div style={Styles} id="linkNavigate" className="row p-5">
+          <h5 className="pr-5" onClick={() => navigate('/home')}>
+            Home
+          </h5>
+          <h5 className="pr-5" onClick={() => navigate('/profile/addRecipe')}>
+            Add Recipe
+          </h5>
+          <h5 onClick={() => navigate('/profile')}>Profile</h5>
+        </div>
+        <div className="mr-3">
+          <button className="btn btn-warning rounded-pill w-100 mt-5 mr-3">Log Out</button>
+        </div>
+      </nav>
+    </div>
+  );
+};
+
+export default Navbar;
