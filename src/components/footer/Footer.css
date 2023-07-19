@@ -1,0 +1,15 @@
+h1#footer {
+  font-size: 60px;
+  margin-bottom: 10px;
+}
+@media (max-width: 575.98px) {
+  .footerList {
+    font-size: 13px;
+  }
+  h1#footer {
+    font-size: 40px;
+  }
+  h5#footer {
+    font-size: 16px;
+  }
+}
