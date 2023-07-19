@@ -4,7 +4,7 @@ import Style from './Footer.css';
 const Footer = () => {
   return (
     <>
-      <section className=" bg-warning">
+      <section className="bg-warning">
         <div className="container pt-5 pb-2" style={{color: '#2E266F'}}>
           <div className="text-center">
             <h1 className={Style} id="footer">
