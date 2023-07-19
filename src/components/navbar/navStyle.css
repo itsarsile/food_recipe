@@ -1,0 +1,13 @@
+@font-face {
+  font-family: AirbnbCereal;
+  src: url('../../assets/font/AirbnbCereal_W_Md.otf');
+}
+
+#linkNavigate {
+  color: #2e266f;
+  font-size: 100px;
+}
+
+#navContainer {
+  font-family: AirbnbCereal;
+}

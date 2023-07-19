@@ -20,7 +20,7 @@ const ModalChangePict = () => {
         <Modal.Body>
           <Form.Group controlId="formFileLg" className="mb-3">
             <Button variant="light" className="w-100 pt-5 pb-5" style={{background: '#F6F5F4'}}>
-              <img src={Image} className="mb-2" />
+              <img src={Image} className="mb-2" alt="profile chage" />
               <h5 className="text-secondary">Add Photo</h5>
               <Form.Control className="p-1 font-weight-bold" type="file" size="m" />
             </Button>
