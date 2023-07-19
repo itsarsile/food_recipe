@@ -1,0 +1,39 @@
+@font-face {
+    font-family: AirbnbCereal;
+    src: url('../../assets/font/AirbnbCereal_W_Md.otf');
+  }
+
+.link1{
+    color: #2E266F;
+    margin-left: 70px;
+    font-family: AirbnbCereal;
+    /* margin-top: 35px; */
+}
+.link2{
+    margin-top: 5px;
+    margin-left: 5px;
+    font-family: AirbnbCereal;
+    color: #fff;
+    text-decoration: none;
+}
+.lgn{
+    margin-left: 680px;
+    display: flex;
+    /* margin-top: 35px; */
+}
+.bul{
+    background-color: #fff;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+.icon{
+    margin-left: 9px;
+    margin-top: 4px;
+}
+.box1{
+    background-color: yellow;
+    width: 400px;
+    height: 100vh;
+    margin-left: auto;
+}
