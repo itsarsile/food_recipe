@@ -46,7 +46,7 @@ const Home = () => {
         </div>
       </section>
 
-      <section className={Styles.sec}>
+      <section className={Styles.se}>
         <div className="container">
           <div className="row">
             <div className={Styles.slice}></div>

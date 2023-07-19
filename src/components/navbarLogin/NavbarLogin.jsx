@@ -10,7 +10,7 @@ const NavbarLogin = () => {
           <Link to={'/home'} className={Styles.link1}>
             Home
           </Link>
-          <Link to={'/add-recipe'} className={Styles.link1}>
+          <Link to={'/profile/addRecipe'} className={Styles.link1}>
             Add Recipe
           </Link>
           <Link to={'/profile'} className={Styles.link1}>
