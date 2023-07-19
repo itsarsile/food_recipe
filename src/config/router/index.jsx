@@ -10,7 +10,7 @@ const Router = () => {
     <div>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Navigate to="/home" replace="true" />} />
+          {/* <Route path="/" element={<Navigate to="/home" replace="true" />} /> */}
           <Route path="/home" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/profile" element={<Profile />} />
