@@ -4,6 +4,7 @@ import Home from '../../pages/Home/Home';
 import Login from '../../pages/Auth/Login';
 import Profile from '../../pages/Profile/Profile';
 import AddRecipe from '../../pages/Profile/AddRecipe';
+import DetailRecipe from '../../pages/DetailRecipe/DetailRecipe';
 
 const Router = () => {
   return (
@@ -15,6 +16,7 @@ const Router = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/profile/addRecipe" element={<AddRecipe />} />
+          <Route path="/detail" element={<DetailRecipe />} />
         </Routes>
       </BrowserRouter>
     </div>
