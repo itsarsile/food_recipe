@@ -2,6 +2,13 @@ body {
     overflow-x: hidden;
 }
 
+#img2 {
+    width: 47.5vw;
+    height: 100vh;
+    z-index: -1;
+    position: relative;
+}
+
 #img1 {
     width: 47.5vw;
     height: 100vh;
@@ -9,9 +16,16 @@ body {
     position: relative;
 }
 
+#name,
 #email,
+#phone,
 #password {
     max-width: 98%;
+    border: 2px solid #8692A6;
+    border-radius: 5px;
+}
+
+#code {
     border: 2px solid #8692A6;
     border-radius: 5px;
 }
@@ -31,9 +45,35 @@ label {
     left: 40%;
 }
 
+#logo-container1 {
+    position: absolute;
+    top: 40%;
+    left: 40%;
+}
+
 #frl-container {
     position: absolute;
     top: 32%;
+}
+
+#fr-container {
+    position: absolute;
+    top: 20%;
+}
+
+#frf-container {
+    position: absolute;
+    top: 38%;
+}
+
+#frr-container {
+    position: absolute;
+    top: 34%;
+}
+
+#frc-container {
+    position: absolute;
+    top: 42%;
 }
 
 #brl {
@@ -45,12 +85,47 @@ label {
 
 }
 
+#brr {
+    width: 426px;
+    height: 34px;
+    border-radius: 5px;
+    color: white;
+    max-width: 98%;
+}
+
+#brf {
+    width: 426px;
+    height: 34px;
+    border-radius: 5px;
+    color: white;
+    max-width: 98%;
+}
+
+#brp {
+    width: 426px;
+    height: 34px;
+    border-radius: 5px;
+    color: white;
+    max-width: 100%;
+}
+
+#brc {
+    width: 250px;
+    height: 34px;
+    border-radius: 5px;
+    color: white;
+}
+
 #reg {
     text-decoration: none;
     color: #EFC81A;
 }
 
 #lsm {
+    display: none;
+}
+
+#lsm1 {
     display: none;
 }
 
@@ -74,11 +149,50 @@ label {
 
     }
 
+    #fr-container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-41%, 31%);
+
+    }
+
+    #frf-container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-41%, 77%);
+
+    }
+
+    #frr-container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-39%, 72%);
+
+    }
+
+    #frc-container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-49%, 139%);
+
+    }
+
     #logo-container {
         position: absolute;
         top: 0%;
         left: 49.8%;
         transform: translate(-41%, 34%);
+    }
+
+    #logo-container1 {
+        position: absolute;
+        top: 0%;
+        left: 49.8%;
+        transform: translate(-41%, 20%);
     }
 
     #lgo {
@@ -99,6 +213,13 @@ label {
         width: 122vw;
     }
 
+    #lsm1 {
+        display: block;
+        position: absolute;
+        height: 119vh;
+        width: 123vw;
+    }
+
     #img1 {
         z-index: -1;
         position: relative;
@@ -107,8 +228,18 @@ label {
         left: 4px;
     }
 
+    #img2 {
+        z-index: -1;
+        position: relative;
+        height: 119vh;
+        width: 122vw;
+        left: 4px;
+    }
+
     #lbe,
-    #lbp {
+    #lbp,
+    #lbn,
+    #lbph {
         color: #F5F5F5;
     }
 
