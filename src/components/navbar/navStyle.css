@@ -5,9 +5,11 @@
 
 #linkNavigate {
   color: #2e266f;
-  font-size: 100px;
-}
-
-#navContainer {
   font-family: AirbnbCereal;
 }
+
+/* @media (max-width: 575.98px) {
+  button.nav-link {
+    font-size: 13px;
+  }
+} */
