@@ -5,28 +5,28 @@ import { Link } from 'react-router-dom'
 const NavbarLogin = () => {
   return (
     <>
-      <div className="container">
-        <nav className="row mt-5">
-          <Link to={'/home'} className={Styles.link1}>
-            Home
-          </Link>
-          <Link to={'/profile/addRecipe'} className={Styles.link1}>
-            Add Recipe
-          </Link>
-          <Link to={'/profile'} className={Styles.link1}>
-            Profile
-          </Link>
-          <div className={Styles.lgn}>
-            <div className={Styles.bul}>
-              <div className={Styles.icon}>
-                <i className="fa-regular fa-user fa-lg" />
-              </div>
+      <div className="container mt-5">
+        <div className="">
+          <ul className="nav">
+            <li className="nav-item">
+              <a className="nav-link active" href="#">Home</a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="#">Add Recipe</a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="#">Profile</a>
+            </li>
+            <li className="nav-item mx-auto">
+              <a className="nav-link" href="#"></a>
+            </li>
+            <div>
+              <li className="nav-item">
+                <a className="nav-link">Login</a>
+              </li>
             </div>
-            <Link to={'/login'} className={Styles.link2} href="">
-              Login
-            </Link>
-          </div>
-        </nav>
+          </ul>
+        </div>
       </div>
     </>
   )
