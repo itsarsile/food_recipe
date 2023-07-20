@@ -17,13 +17,8 @@ const Navbar = () => {
                 </Link>
                 <div className={Styles.lgn}>
                     <div className={Styles.bul}>
-                        <div className={Styles.icon}>
-                            <i className="fa-regular fa-user fa-lg" />
-                        </div>
+                        <button>Logout</button>
                     </div>
-                    <a className={Styles.link2} href="">
-                        Login
-                    </a>
                 </div>
             </nav>
         </div>
