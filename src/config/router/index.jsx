@@ -8,6 +8,7 @@ import Register from '../../pages/Auth/Register';
 import ForgotPassword from '../../pages/Auth/ForgotPassword';
 import ResetPassword from '../../pages/Auth/ResetPassword';
 import Code from '../../pages/Auth/Code';
+import DetailRecipe from '../../pages/DetailRecipe/DetailRecipe';
 
 const Router = () => {
   return (
