@@ -5,7 +5,7 @@ import Footer from '../../components/footer/Footer';
 import card from '../../assets/image/profileCard.png';
 import ModalChangePict from '../../components/modal/ModalChangePict';
 import {useNavigate} from 'react-router-dom';
-import Style from './cardProfile.module.css';
+import Style from './Profile.css';
 import Navbar from '../../components/navbar/Navbar';
 
 const Profile = () => {
@@ -16,7 +16,7 @@ const Profile = () => {
       <Navbar />
       <div className="container" style={Style}>
         <section>
-          <div className="text-center mt-3">
+          <div className="text-center mt-3" id="profileStyle">
             <img src={picPro} alt="" className="rounded-circle w-50 col-md-2 col-6" />
             <div className="dropleft" style={{marginTop: -30, marginLeft: 130}}>
               <button className="btn btn-outline-light dropdown-toggle rounded-pill" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -37,7 +37,7 @@ const Profile = () => {
         </section>
         <section className="mb-5">
           <>
-            <nav>
+            <nav id="profileStyle">
               <div className="nav nav-tabs border-warning" id="nav-tab-profile" role="tablist">
                 <button className="nav-link font-weight-bold active" id="nav-home-tab" data-toggle="tab" data-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">
                   My Recipe
@@ -52,7 +52,7 @@ const Profile = () => {
             </nav>
             <card className="tab-content" id="nav-tabContent">
               <div className="tab-pane fade show active " id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-                <div className="row p-3">
+                <div className="row p-3" id="profileStyle">
                   <div className="col-md-3 col-6 p-1 mb-4">
                     <img src={card} alt="" className="col-12" />
                     <h5 className="col-md-3 col-6 pl-4 text-white" style={{marginTop: -60}}>

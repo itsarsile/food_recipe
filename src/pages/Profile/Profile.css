@@ -3,13 +3,14 @@
   src: url('../../assets/font/AirbnbCereal_W_Md.otf');
 }
 
-html,
-body {
+#profileStyle {
   font-family: AirbnbCereal;
 }
-
+#addRecStyle {
+  font-family: AirbnbCereal;
+}
 @media (max-width: 575.98px) {
   button.nav-link {
-    font-size: 13px;
+    font-size: 12px;
   }
 }
