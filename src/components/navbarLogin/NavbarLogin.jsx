@@ -6,24 +6,26 @@ const NavbarLogin = () => {
   return (
     <>
       <div className="container mt-5">
-        <div className="">
+        <div className={Styles.pos}>
           <ul className="nav">
             <li className="nav-item">
-              <a className="nav-link active" href="#">Home</a>
+              <Link to={'/home'} className="nav-link active" id={Styles.home}>Home</Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">Add Recipe</a>
+              <Link to={'/profile/addRecipe'} className="nav-link" id={Styles.links}>Add Recipe</Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">Profile</a>
+              <Link to={'/profile'} className="nav-link" id={Styles.links}>Profile</Link>
             </li>
             <li className="nav-item mx-auto">
-              <a className="nav-link" href="#"></a>
             </li>
-            <div>
-              <li className="nav-item">
-                <a className="nav-link">Login</a>
-              </li>
+            <div className={Styles.wrapper}>
+              <div className={Styles.bul}>
+              <i className="fa-regular fa-user fa-lg" id={Styles.icon}></i>
+              </div>
+                <li className="nav-item">
+                  <Link to={'/login'} className="nav-link" id={Styles.lgn}>Login</Link>
+                </li>
             </div>
           </ul>
         </div>
