@@ -3,14 +3,14 @@ body {
 }
 
 #img2 {
-    width: 47.5vw;
+    width: 46.2vw;
     height: 100vh;
     z-index: -1;
     position: relative;
 }
 
 #img1 {
-    width: 47.5vw;
+    width: 46.2vw;
     height: 100vh;
     z-index: -1;
     position: relative;
@@ -53,27 +53,27 @@ label {
 
 #frl-container {
     position: absolute;
-    top: 32%;
+    top: 22%;
 }
 
 #fr-container {
     position: absolute;
-    top: 20%;
-}
-
-#frf-container {
-    position: absolute;
-    top: 38%;
+    top: 13%;
 }
 
 #frr-container {
     position: absolute;
-    top: 34%;
+    top: 30%;
+}
+
+#frf-container {
+    position: absolute;
+    top: 30%;
 }
 
 #frc-container {
     position: absolute;
-    top: 42%;
+    top: 35%;
 }
 
 #brl {
