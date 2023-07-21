@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import NavbarLogin from '../../components/navbarLogin/NavbarLogin'
 import Styles from './Home.module.css'
 import delicious from '../../assets/img/—Pngtree—delicious food_568171 1.png'
@@ -15,8 +15,16 @@ import P4 from '../../assets/img/Rectangle 317.png'
 import P5 from '../../assets/img/Rectangle 318.png'
 import P6 from '../../assets/img/Rectangle 319.png'
 import Footer from '../../components/footer/Footer'
+import axios from 'axios'
+import Carousel from 'react-bootstrap/Carousel';
 
 const Home = () => {
+  useEffect(() => {
+    axios.get('https://food-recipe-be.onrender.com/recipes')
+      .then((res) => {
+        console.log(res.data.data);
+      })
+  })
   return (
     <>
       <div className={Styles.bdy}>
@@ -57,7 +65,7 @@ const Home = () => {
         </div>
 
         <section className={Styles.se}>
-          <div className="container">
+          <div className="container mt-5">
             <div className="row">
               <div className={Styles.slice}></div>
               <h5 className={Styles.hd5}>Popular For you !</h5>
@@ -66,19 +74,32 @@ const Home = () => {
           <div className="mt-5">
             <img src={three} className={Styles.n} alt="" />
           </div>
-          <div className="row">
-            <div className={Styles.wrap}>
-              <img src={one} className={Styles.on} alt="" />
+          <div className={Styles.wrap}>
+          <Carousel>
+            <Carousel.Item>
+              <img
+                className="d-block w-100"
+                src={one}
+                alt="First slide"
+              />
+              <Carousel.Caption>
               <h6 className={Styles.title}>Pizza Lamoa</h6>
-            </div>
-            <div className={Styles.rel}>
-              <div className={Styles.wrapp}>
-                <img src={two} className={Styles.ont} alt="" />
-                <h6 className={Styles.title}>King Burger</h6>
-              </div>
-            </div>
+              </Carousel.Caption>
+            </Carousel.Item>
+            <Carousel.Item>
+              <img
+                className="d-block w-100"
+                src={two}
+                alt="Second slide"
+              />
+
+              <Carousel.Caption>
+              <h6 className={Styles.title}>Pizza Lamoa</h6>
+              </Carousel.Caption>
+            </Carousel.Item>
+          </Carousel>
           </div>
-        </section>
+        </section >
 
         <section className={Styles.sec}>
           <div className="container mt-5">
@@ -101,7 +122,7 @@ const Home = () => {
               <div className={Styles.wrapper}>
                 <h1 className={Styles.hlth}>Healthy Bone Broth Ramen (Quick & Easy)</h1>
                 <div className={Styles.line}></div>
-                <p className={Styles.p}>Quick + Easy Chicken Bone Broth Ramen - Healthy chicken ramen in a hurry? That’s right!</p>
+                <p className={Styles.p}>Quick + Easy span Chicken Bone Broth Ramen - Healthy chicken ramen in a hurry? That’s right!</p>
                 <div className={Styles.btn}>
                   <button className={Styles.buttn}>Learn More</button>
                 </div>
@@ -161,7 +182,7 @@ const Home = () => {
         <div className="mt-5">
           <Footer />
         </div>
-      </div>
+      </div >
     </>
   )
 }
