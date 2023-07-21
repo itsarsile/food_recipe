@@ -9,6 +9,9 @@ import Style from './Profile.css';
 import Navbar from '../../components/navbar/Navbar';
 
 const Profile = () => {
+  // const idUser = localStorage.getItem("idUser");
+  // const userName = localStorage.getItem("name");
+  // const profilePic = localStorage.getItem("photo");
   const navigate = useNavigate();
 
   return (
@@ -17,7 +20,8 @@ const Profile = () => {
       <div className="container" style={Style}>
         <section>
           <div className="text-center mt-3" id="profileStyle">
-            <img src={picPro} alt="" className="rounded-circle w-50 col-md-2 col-6" />
+            <img src={picPro} alt="profilePic" className="rounded-circle w-50 col-md-2 col-6" />
+            {/* <img src={profilePic} alt="profilePic"  className="rounded-circle w-50 col-md-2 col-6" /> */}
             <div className="dropleft" style={{marginTop: -30, marginLeft: 130}}>
               <button className="btn btn-outline-light dropdown-toggle rounded-pill" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <img src={changeProfile} alt="" className="align-bottom" />
@@ -25,13 +29,14 @@ const Profile = () => {
               <div className="dropdown-menu bg-secondary text-center" aria-labelledby="dropdownMenu2">
                 <button className="dropdown-item" type="button">
                   <ModalChangePict />
+                  {/* <ModalChangePict id={id}/> */}
                 </button>
-                <button className="dropdown-item" type="button" onClick={() => navigate('/changePassword')}>
+                <button className="dropdown-item" type="button" onClick={() => navigate('/resetpassword')}>
                   Change Password
                 </button>
               </div>
             </div>
-
+            {/* <h5>{userName}</h5> */}
             <h5>User name</h5>
           </div>
         </section>
