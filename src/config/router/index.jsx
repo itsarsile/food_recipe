@@ -9,6 +9,7 @@ import ForgotPassword from '../../pages/Auth/ForgotPassword';
 import ResetPassword from '../../pages/Auth/ResetPassword';
 import Code from '../../pages/Auth/Code';
 import GetNyoba from '../../pages/Profile/getNyoba';
+import DetailRecipe from '../../pages/DetailRecipe/DetailRecipe';
 
 const Router = () => {
   return (
@@ -25,6 +26,7 @@ const Router = () => {
           <Route path="/coba" element={<GetNyoba />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/profile/addRecipe" element={<AddRecipe />} />
+          <Route path="/detail" element={<DetailRecipe />} />
         </Routes>
       </BrowserRouter>
     </div>

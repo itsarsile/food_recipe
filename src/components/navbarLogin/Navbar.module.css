@@ -3,23 +3,20 @@
     src: url('../../assets/font/AirbnbCereal_W_Md.otf');
   }
 
-.link1{
+#home{
     color: #2E266F;
-    margin-left: 70px;
+    font-size: 1.25rem;
     font-family: AirbnbCereal;
-    /* margin-top: 35px; */
 }
-.link2{
-    margin-top: 5px;
-    margin-left: 5px;
+#links{
     font-family: AirbnbCereal;
+    color: #2E266F;
+    font-size: 1.25rem;
+    margin-left: 50px;
+}
+#lgn{
     color: #fff;
-    text-decoration: none;
-}
-.lgn{
-    margin-left: 680px;
-    display: flex;
-    /* margin-top: 35px; */
+    font-size: 13px;
 }
 .bul{
     background-color: #fff;
@@ -27,9 +24,13 @@
     height: 30px;
     border-radius: 50%;
 }
-.icon{
-    margin-left: 9px;
-    margin-top: 4px;
+.wrapper{
+    width: 100px;
+    display: flex;
+}
+#icon{
+    margin-left: 8px;
+    margin-top: 13px;
 }
 .box1{
     background-color: yellow;
@@ -37,14 +38,18 @@
     height: 100vh;
     margin-left: auto;
 }
-
+.pos{
+    position: relative;
+}
 @media screen and (max-width:600px){
-    .link1{
-        margin-left: 40px;
+    #links{
+        margin-left: 0;
     }
 
-    .lgn{
-        margin-left: 30px;
-        margin-bottom: 10px;
+    .wrapper{
+        position: absolute;
+        left: 250px;
+        background-color: #efc81a;
+        
     }
 }
