@@ -29,7 +29,7 @@ const Profile = () => {
               <div className="dropdown-menu bg-secondary text-center" aria-labelledby="dropdownMenu2">
                 <button className="dropdown-item" type="button">
                   <ModalChangePict />
-                  {/* <ModalChangePict id={id}/> */}
+                  {/* <ModalChangePict id={idUser} name={userName} /> */}
                 </button>
                 <button className="dropdown-item" type="button" onClick={() => navigate('/resetpassword')}>
                   Change Password
