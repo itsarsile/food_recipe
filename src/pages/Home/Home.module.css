@@ -95,9 +95,7 @@ body {
   height: 80px;
 }
 .wrap {
-  width: 300px;
-  margin-left: 15px;
-  margin-top: 10px;
+  margin-left: 25px;
   position: relative;
 }
 .wrapp {
@@ -105,20 +103,19 @@ body {
   margin-left: 15px;
   margin-top: 10px;
   margin-left: 50px;
-  margin-top: 10px;
   position: relative;
 }
 .on {
-  width: 100%;
+  width: 300px;
 }
-.title {
+#title {
   width: 109px;
   font-size: 23px;
   font-family: AirbnbCereal;
   color: #fff;
   position: absolute;
 
-  /* left: 10px; */
+  left: 10px;
   bottom: 22px;
 }
 .ont {
@@ -273,7 +270,7 @@ body {
     margin-top: 0;
   }
   .wrap{
-    margin-left: 45px;
+    margin-left: 29px;
   }
   .wrapp{
     margin-top: 30px;
