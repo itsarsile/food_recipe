@@ -1,8 +1,39 @@
-import React from 'react'
+import React, { useState } from 'react'
 import main from '../../assets/image/image1.jpg'
 import logo from '../../assets/image/barbecue 1.png'
+import axios from 'axios';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Register = () => {
+    const navigate = useNavigate();
+    const [register ,setRegister] = useState({
+        name:"",
+        email:"",
+        password:"",
+        phone:"",
+    });
+
+    const handleChange = (e) => {
+        setRegister({
+            ...register,
+            [e.target.name]: e.target.value
+        });
+    };
+
+    const handleRegister = (e) => {
+        e.preventDefault();
+        const registerData = { ...register};
+        axios.post("https://food-recipe-be.onrender.com/users/register",registerData)
+        .then((res) => {
+            alert("Succesful Register");
+            navigate("/Login");
+        })
+        .catch((err) => {
+            console.log(err.response);
+            alert("Signup Failed")
+        })
+    };
+
     return (
         <div className="row ml-md-5 mr-md-5">
             <div
@@ -18,13 +49,14 @@ const Register = () => {
             </div>
             <div className="col-md-6 p-0">
                 <div id="lsm1" style={{ backgroundColor: "#EFC81A90" }}>
-                    <img src={main} id="img2" alt="image" />
+                    <img src={main} id="img2" alt="image1" />
                     <div id="logo-container1">
-                        <img src={logo} alt="logo" id="lgo" />
+                        <img src={logo} alt="logo1" id="lgo" />
                         <p style={{ textAlign: "center", color: "white" }}>Mama Recipe.</p>
                     </div>
                 </div>
                 <form
+                    onSubmit={handleRegister}
                     className="container d-flex flex-column align-items-center"
                     id="fr-container"
                 >
@@ -44,6 +76,8 @@ const Register = () => {
                             id="name"
                             name="name"
                             placeholder="Name"
+                            value={register.name}
+                            onChange={handleChange}
                         />
                     </div>
                     <div className="mt-3">
@@ -57,6 +91,8 @@ const Register = () => {
                             id="email"
                             name="email"
                             placeholder="example@gmail.com"
+                            value={register.email}
+                            onChange={handleChange}
                         />
                     </div>
                     <div className="mt-3">
@@ -70,6 +106,8 @@ const Register = () => {
                             id="phone"
                             name="phone"
                             placeholder="08xxxxxxxx"
+                            value={register.phone}
+                            onChange={handleChange}
                         />
                     </div>
                     <div className="mt-3">
@@ -83,6 +121,8 @@ const Register = () => {
                             id="password"
                             name="password"
                             placeholder="password"
+                            value={register.password}
+                            onChange={handleChange}
                         />
                     </div>
                     <div className="mt-3 mb-1">
@@ -91,14 +131,14 @@ const Register = () => {
                             I agree to terms &amp; conditions
                         </label>
                     </div>
-                    <button type="submit" className="mt-4 btn btn-warning" id="brr">
+                    <button type="submit" className="mt-4 btn btn-warning" id="brr" onClick={handleRegister}>
                         Register Account
                     </button>
                     <p className="mt-4">
                         Already have account?
-                        <a href="login.html" id="reg">
+                        <Link to={"/Login"} id="reg">
                             Login here
-                        </a>
+                        </Link>
                     </p>
                 </form>
             </div>
