@@ -1,5 +1,5 @@
 import Styles from './Home.module.css'
-import burger from '../../assets/img/Rectangle 313.png'
+// import burger from '../../assets/img/Rectangle 313.png'
 import Footer from '../../components/footer/Footer'
 import 'react-multi-carousel/lib/styles.css';
 import Section1 from './section/Section1'
@@ -8,6 +8,7 @@ import three from '../../assets/img/Make Vector.png'
 import Product from './section/Product'
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
+import { Link } from 'react-router-dom';
 
 
 const Home = () => {
@@ -59,11 +60,11 @@ const Home = () => {
             </div>
           </div>
           <div className="mt-5">
-            <img src={three} className={Styles.n} alt="" />
+            <img src={three} className={Styles.n} alt="Vector" />
           </div>
           <div className={Styles.wrap}>
-            <Carousel 
-            responsive={responsive}>
+            <Carousel
+              responsive={responsive}>
               {products}
             </Carousel>
           </div>
@@ -77,27 +78,29 @@ const Home = () => {
               <h5 className={Styles.hd5}>New Recipe</h5>
             </div>
           </div>
-          <div className={Styles.wrapr}>
-            <div className="col-6">
-              <div className={Styles.frs}>
-                <div className={Styles.scn}>
-                  <div className={Styles.thr}>
-                    <img src={burger} className={Styles.bgr} alt="" />
+          {recipes.slice(0, 1).map((recipe => (
+            <div className={Styles.wrapr}>
+              <div className="col-6">
+                <div className={Styles.frs}>
+                  <div className={Styles.scn}>
+                    <div className={Styles.thr}>
+                      <img src={recipe.photo} className={Styles.bgr} alt="Product utama" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="col-6">
+                <div className={Styles.wrapper}>
+                  <h1 className={Styles.hlth}>{recipe.title}</h1>
+                  <div className={Styles.line}></div>
+                  <p className={Styles.p}>{recipe.details}</p>
+                  <div className={Styles.btn}>
+                    <button className={Styles.buttn}>Learn More</button>
                   </div>
                 </div>
               </div>
             </div>
-            <div className="col-6">
-              <div className={Styles.wrapper}>
-                <h1 className={Styles.hlth}>Healthy Bone Broth Ramen (Quick & Easy)</h1>
-                <div className={Styles.line}></div>
-                <p className={Styles.p}>Quick + Easy span Chicken Bone Broth Ramen - Healthy chicken ramen in a hurry? That’s right!</p>
-                <div className={Styles.btn}>
-                  <button className={Styles.buttn}>Learn More</button>
-                </div>
-              </div>
-            </div>
-          </div>
+          )))}
         </section>
 
         <section className={Styles.sec}>
@@ -109,17 +112,19 @@ const Home = () => {
           </div>
           <div className="container mt-5">
             <div className='row'>
-              {recipes.map((recipe=>(
+              {recipes.map((recipe => (
                 <div className="col-md-4">
-                <div className={Styles.wrappe1}>
-                  <img src={recipe.photo} alt="" className={Styles.product} />
-                  <h6 className={Styles.titles}>{recipe.title}</h6>
+                  <Link to={`detail/${recipe.id}`}>
+                    <div className={Styles.wrappe1}>
+                      <img src={recipe.photo} alt="Recipe popular" className={Styles.product} />
+                      <h6 className={Styles.titles}>{recipe.title}</h6>
+                    </div>
+                  </Link>
                 </div>
-              </div>
               )))}
             </div>
           </div>
-        </section>
+        </section >
         <div className="mt-5">
           <Footer />
         </div>

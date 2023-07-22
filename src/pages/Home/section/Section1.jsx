@@ -28,10 +28,10 @@ const Section1 = () => {
                     <img
                       src={delicious}
                       className={Styles.photoawal}
-                      alt=""
+                      alt="Delicious food"
                     />
-                    <img src={vector} className={Styles.photokedua} alt="" />
-                    <img src={salad} className={Styles.photoketiga} alt="" />
+                    <img src={vector} className={Styles.photokedua} alt="Vector Bg" />
+                    <img src={salad} className={Styles.photoketiga} alt="Lettuce" />
                   </div>
                 </div>
               </div>

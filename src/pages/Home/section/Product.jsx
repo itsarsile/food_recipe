@@ -8,7 +8,7 @@ const Product = (props) => {
                     className="photo"
                     id={Styles.on}
                     src={props.photo}
-                    alt="First slide"
+                    alt="Popular for you"
                 />
                 <h6 className="title" id={Styles.title}>{props.title}</h6>
             </div>

@@ -16,7 +16,7 @@ body {
 .wrappe {
   margin-top: 50px;
   padding-left: 100px;
-  height: 1000px;
+  height: 400px;
 }
 #txt {
   color: #2e266f;
@@ -25,6 +25,7 @@ body {
 }
 .photo {
   width: 70%;
+  position: relative;
 }
 .ha3 {
   font-size: 35px;
@@ -127,6 +128,26 @@ body {
 .farap {
   font-size: 13px;
 }
+.bton{
+  position: absolute;
+  bottom: 20px;
+  left: 800px;
+}
+.save{
+  width: 30px;
+  height: 30px;
+  background-color: #efc81a;
+  border: none;
+  border-radius: 5px;
+}
+.like{
+  width: 30px;
+  height: 30px;
+  background-color: #fff;
+  border: 1px solid #efc81a;
+  border-radius: 5px;
+  margin-left: 20px;
+}
 
 @media screen and (max-width: 600px) {
   .photo {
@@ -142,7 +163,6 @@ body {
   .wrappe {
     margin-top: 30px;
     padding-left: 0;
-    height: 1000px;
   }
   .list{
     width: 350px;
