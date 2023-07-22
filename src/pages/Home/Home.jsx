@@ -1,5 +1,5 @@
 import Styles from './Home.module.css'
-import burger from '../../assets/img/Rectangle 313.png'
+// import burger from '../../assets/img/Rectangle 313.png'
 import Footer from '../../components/footer/Footer'
 import 'react-multi-carousel/lib/styles.css';
 import Section1 from './section/Section1'
