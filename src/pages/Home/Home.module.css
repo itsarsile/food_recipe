@@ -105,7 +105,7 @@ body {
   margin-left: 50px;
   position: relative;
 }
-.on {
+#on {
   width: 300px;
 }
 #title {
@@ -199,8 +199,8 @@ body {
 }
 .wrappe1 {
   width: 247px;
+  margin-bottom: 105px;
   position: relative;
-  margin-right: 100px;
 }
 .wrappe2 {
   width: 247px;
