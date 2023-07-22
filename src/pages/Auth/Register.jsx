@@ -41,7 +41,7 @@ const Register = () => {
                 style={{ backgroundColor: "#EFC81A90", height: "100vh" }}
                 id="ls"
             >
-                <img src={main} id="img2" alt="image" />
+                <img src={main} id="img2" alt="main" />
                 <div id="logo-container1">
                     <img src={logo} alt="logo" />
                     <p style={{ textAlign: "center", color: "white" }}>Mama Recipe.</p>
@@ -49,7 +49,7 @@ const Register = () => {
             </div>
             <div className="col-md-6 p-0">
                 <div id="lsm1" style={{ backgroundColor: "#EFC81A90" }}>
-                    <img src={main} id="img2" alt="image1" />
+                    <img src={main} id="img2" alt="main" />
                     <div id="logo-container1">
                         <img src={logo} alt="logo1" id="lgo" />
                         <p style={{ textAlign: "center", color: "white" }}>Mama Recipe.</p>

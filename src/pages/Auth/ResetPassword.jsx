@@ -10,7 +10,7 @@ const ResetPassword = () => {
                 style={{ backgroundColor: "#EFC81A90", height: "100vh" }}
                 id="ls"
             >
-                <img src={main} id="img1" alt="image" />
+                <img src={main} id="img1" alt="main" />
                 <div id="logo-container">
                     <img src={logo} alt="logo" />
                     <p style={{ textAlign: "center", color: "white" }}>Mama Recipe.</p>
