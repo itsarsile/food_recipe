@@ -29,10 +29,10 @@ const DetailRecipe = () => {
                     <div className="col-12">
                         <div className={Styles.wrapper}>
                             <h1 className='mb-5' id={Styles.txt}>{recipe.title}</h1>
-                            <img src={recipe.photo} className={Styles.photo} alt="Image product" />
+                            <img src={recipe.photo} className={Styles.photo} alt="Logo product" />
                             <div className={Styles.bton}>
-                            <button className={Styles.save}><i className="fa-regular fa-bookmark fa-lg"></i></button>
-                            <button className={Styles.like}><i className="fa-regular fa-thumbs-up fa-lg"></i></button>
+                                <button className={Styles.save}><i className="fa-regular fa-bookmark fa-lg"></i></button>
+                                <button className={Styles.like}><i className="fa-regular fa-thumbs-up fa-lg"></i></button>
                             </div>
                         </div>
                     </div>
@@ -52,7 +52,7 @@ const DetailRecipe = () => {
                             <h3 className={Styles.video}>Video Step</h3>
                             <div className={Styles.lists}>
                                 <button className={Styles.btn}>
-                                    <img src={Play} alt="" />
+                                    <img src={Play} alt="video" />
                                 </button>
                             </div>
                         </div>
