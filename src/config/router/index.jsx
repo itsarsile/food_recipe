@@ -28,7 +28,7 @@ const Router = () => {
           <Route path="/video" element={<DetailVideo />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/profile/addRecipe" element={<AddRecipe />} />
-          <Route path="/detail/:id" element={<DetailRecipe />} />
+          <Route path="/home/detail/:id" element={<DetailRecipe />} />
         </Routes>
       </BrowserRouter>
     </div>

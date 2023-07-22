@@ -29,7 +29,7 @@ const DetailRecipe = () => {
                     <div className="col-12">
                         <div className={Styles.wrapper}>
                             <h1 className='mb-5' id={Styles.txt}>{recipe.title}</h1>
-                            <img src={recipe.photo} className={Styles.photo} alt="" />
+                            <img src={recipe.photo} className={Styles.photo} alt="Image product" />
                         </div>
                     </div>
                 </section>
@@ -38,13 +38,13 @@ const DetailRecipe = () => {
                     <div className={Styles.wrappe}>
                         <h3 className={Styles.ha3}>Ingredients</h3>
                         <div className={Styles.list}>
-                            <p className={Styles.text}> - 2 Egg</p>
-                            <p className={Styles.text}> - 2 Tbsp Mayonnaise</p>
+                            <p className={Styles.text}>{recipe.title}</p>
+                            {/* <p className={Styles.text}> - 2 Egg</p>
                             <p className={Styles.text}> - 3 Slices Bread</p>
                             <p className={Styles.text}> - A Little Butter</p>
                             <p className={Styles.text}> - ⅓ Carton Of Cress</p>
                             <p className={Styles.text}> - 2-3 Slices Of Tomato Or A Lettuce Leaf And A Slice Of Ham Or Cheese</p>
-                            <p className={Styles.text}> - Crisps , To Serve</p>
+                            <p className={Styles.text}> - Crisps , To Serve</p> */}
                             <h3 className={Styles.video}>Video Step</h3>
                             <div className={Styles.lists}>
                                 <button className={Styles.btn}>
