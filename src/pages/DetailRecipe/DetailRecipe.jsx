@@ -1,13 +1,26 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Navbar from '../../components/navbar/Navbar'
 import Food from '../../assets/image/Rectangle 313 (1).png'
 import Foto from '../../assets/image/Ellipse 128.png'
 import Styles from './Detail.module.css'
 import Play from '../../assets/image/play.png'
 import Footer from '../../components/footer/Footer'
+import { useParams } from 'react-router-dom'
+import axios from 'axios'
 
 
 const DetailRecipe = () => {
+    const {id} = useParams();
+    const [recipe, setRecipe] = useState("");
+    useEffect(()=>{
+        axios.get(`https://food-recipe-be.onrender.com/recipes/${id}`)
+        .then((res)=>{
+            setRecipe(res.data.data.recipeData[0]);
+        })
+        .catch((err)=>{
+            console.log(err);
+        })
+    },[id])
     return (
         <>
             <Navbar />
@@ -15,8 +28,8 @@ const DetailRecipe = () => {
                 <section>
                     <div className="col-12">
                         <div className={Styles.wrapper}>
-                            <h1 className='mb-5' id={Styles.txt}>Loream Sandwich</h1>
-                            <img src={Food} className={Styles.photo} alt="" />
+                            <h1 className='mb-5' id={Styles.txt}>{recipe.title}</h1>
+                            <img src={recipe.photo} className={Styles.photo} alt="" />
                         </div>
                     </div>
                 </section>
@@ -54,8 +67,8 @@ const DetailRecipe = () => {
                 <section>
                     <div className={Styles.wrapp}>
                         <div className={Styles.wrap}>
-                            <input type="text" className={Styles.comment} />
-                            <p className={Styles.paraf}>Comment :</p>
+                            <textarea type="text" className={Styles.comment} placeholder='Comment :'/>
+                            {/* <p className={Styles.paraf}>Comment :</p> */}
                             <div className={Styles.mainBtn}>
                                 <button className={Styles.subBtn}>
                                     Send</button>
