@@ -1,9 +1,42 @@
-import React from 'react'
+import React, { useState } from 'react'
 import '../Auth/auth.css'
 import main from '../../assets/image/image1.jpg'
 import logo from '../../assets/image/barbecue 1.png'
+import { Link, useNavigate } from 'react-router-dom'
+import axios from 'axios'
 
 const Login = () => {
+  const navigate = useNavigate();
+  const [login,setLogin] = useState({
+    email:"",
+    password:""
+  });
+
+  const handleChange = (e) => {
+    setLogin({
+      ...login,
+      [e.target.name]: e.target.value
+    });
+  };
+  
+  const handleLogin = (e) => {
+    e.preventDefault();
+    axios.post("https://food-recipe-be.onrender.com/users/login",login)
+    .then((res) => {
+      const {data} = res.data;
+      alert("Successful Login");
+      localStorage.setItem("token", data.user.token);
+      localStorage.setItem("id", data.user.id);
+      localStorage.setItem("name", data.user.name);
+      localStorage.setItem("photo", data.user.photo);
+      navigate("/Home");
+    })
+    .catch((err) => {
+      console.log(err.response);
+      alert("Email/Password Wrong");
+    });
+  };
+
   return (
     <div className="row ml-md-5 mr-md-5">
   <div
@@ -11,7 +44,7 @@ const Login = () => {
     style={{ backgroundColor: "#EFC81A90", height: "100vh" }}
     id="ls"
   >
-    <img src={main} id="img1" alt="image" />
+    <img src={main} id="img1" alt="main" />
     <div id="logo-container">
       <img src={logo} alt="logo" />
       <p style={{ textAlign: "center", color: "white" }}>Mama Recipe.</p>
@@ -19,13 +52,13 @@ const Login = () => {
   </div>
   <div className="col-md-6 p-0 ">
     <div id="lsm" style={{ backgroundColor: "#EFC81A90" }}>
-      <img src={main} id="img1" alt="image" />
+      <img src={main} id="img1" alt="main" />
       <div id="logo-container">
         <img src={logo} alt="logo" id="lgo" />
         <p style={{ textAlign: "center", color: "white" }}>Mama Recipe.</p>
       </div>
     </div>
-    <form
+    <form onSubmit={handleLogin}
       className=" container d-flex flex-column align-items-center"
       id="frl-container"
     >
@@ -45,6 +78,8 @@ const Login = () => {
           id="email"
           name="email"
           placeholder="example@gmail.com"
+          value={login.email}
+          onChange={handleChange}
         />
       </div>
       <div className="mt-3">
@@ -58,6 +93,8 @@ const Login = () => {
           id="password"
           name="password"
           placeholder="password"
+          value={login.password}
+          onChange={handleChange}
         />
       </div>
       <div className="mt-3 mb-1">
@@ -69,14 +106,14 @@ const Login = () => {
       <button type="submit" className="mt-4 btn btn-warning" id="brl">
         Log in
       </button>
-      <a href="forgotPassword.html" id="fp">
+      <Link to={"/forgotpassword"} id="fp">
         Forgot password?
-      </a>
+      </Link>
       <p className="mt-4">
         Dont have an account?
-        <a href="register.html" id="reg">
+        <Link to={"/register"} id="reg">
           Register
-        </a>
+        </Link>
       </p>
     </form>
   </div>
