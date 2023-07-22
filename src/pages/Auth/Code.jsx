@@ -9,7 +9,7 @@ const Code = () => {
                 className="col-md-6 p-0 m-0"
                 style={{ backgroundColor: "#EFC81A90", height: "100vh" }}
                 id='ls'>
-                <img src={main} id="img1" alt="image" />
+                <img src={main} id="img1" alt="main" />
                 <div id="logo-container">
                     <img
                         src={logo}
