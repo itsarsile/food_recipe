@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "../../components/navbar/Navbar";
-import Foto from "../../assets/image/Ellipse 128.png";
 import Styles from "./Detail.module.css";
 import Play from "../../assets/image/play.png";
 import Footer from "../../components/footer/Footer";
@@ -8,28 +7,17 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import Modal from "react-bootstrap/Modal";
 import Swal from 'sweetalert2'
+import Comment from "./Comment";
 
 const DetailRecipe = () => {
     const [lgShow, setLgShow] = useState(false);
-
+    
     const { id } = useParams();
     const [userId, setUserId] = useState("");
     const [recipe, setRecipe] = useState("");
-    // const [data, setData] = useState({
-    //     userid: "",
-    //     recipeid: "",
-    // });
-
-    // const handleChange = (e) => {
-    //     setData({
-    //         ...data,
-    //         [e.target.name]: e.target.value,
-    //     });
-    // };
 
     useEffect(() => {
         const storedUserId = localStorage.getItem("id");
-        console.log(storedUserId);
         setUserId(storedUserId);
     }, []);
 
@@ -38,7 +26,6 @@ const DetailRecipe = () => {
             .get(`https://food-recipe-be.onrender.com/recipes/${id}`)
             .then((res) => {
                 setRecipe(res.data.data.recipeData[0]);
-                // setRecipe(res.data.data.userData[0]);
             })
             .catch((err) => {
                 console.log(err);
@@ -56,23 +43,36 @@ const DetailRecipe = () => {
                 text: 'Recipe has been save',
             })
         })
-        .catch(()=>{
-            Swal.fire({
-                icon: 'error',
-                title: 'Oups...',
-                text: "Recipe can't be saved",
-              })
-        })
+            .catch(() => {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oups...',
+                    text: "Recipe can't be saved",
+                })
+            })
     };
 
     const handleLike = (e) => {
         e.preventDefault();
         axios.post(
             `https://food-recipe-be.onrender.com/recipes/liked/${id}/user/${userId}`
-        );
+        ).then(() => {
+            Swal.fire({
+                icon: 'success',
+                title: 'Thank you',
+                text: 'Recipe has been like',
+            })
+        }).catch(() => {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oups...',
+                text: "Recipe can't be like",
+            })
+        })
     };
     return (
         <>
+        
             <Navbar />
             <div className="container">
                 <section>
@@ -88,10 +88,10 @@ const DetailRecipe = () => {
                                     alt="Logo product"
                                 />
                                 <div className={Styles.bton}>
-                                    <button className={Styles.save} onClick={handleSave}>
+                                    <button className={Styles.save} onClick={handleLike}>
                                         <i className="fa-regular fa-bookmark fa-lg"></i>
                                     </button>
-                                    <button className={Styles.like} onClick={handleLike}>
+                                    <button className={Styles.like} onClick={handleSave}>
                                         <i className="fa-regular fa-thumbs-up fa-lg"></i>
                                     </button>
                                 </div>
@@ -104,7 +104,7 @@ const DetailRecipe = () => {
                     <div className={Styles.wrappe}>
                         <h3 className={Styles.ha3}>Ingredients</h3>
                         <div className={Styles.list}>
-                            <p className={Styles.text}>{recipe.title}</p>
+                            <p className={Styles.text}>{recipe.details}</p>
                             <h3 className={Styles.video}>Video Step</h3>
                             <div className={Styles.lists}>
                                 <button className={Styles.btn} onClick={() => setLgShow(true)}>
@@ -118,7 +118,7 @@ const DetailRecipe = () => {
                                 >
                                     <Modal.Header closeButton>
                                         <Modal.Title id="example-modal-sizes-title-lg">
-                                            Large Modal
+                                            Recipe video
                                         </Modal.Title>
                                     </Modal.Header>
                                     <Modal.Body>
@@ -136,33 +136,7 @@ const DetailRecipe = () => {
                     </div>
                 </section>
 
-                <section>
-                    <div className={Styles.wrapp}>
-                        <div className={Styles.wrap}>
-                            <textarea
-                                type="text"
-                                className={Styles.comment}
-                                placeholder="Comment :"
-                            />
-                            {/* <p className={Styles.paraf}>Comment :</p> */}
-                            <div className={Styles.mainBtn}>
-                                <button className={Styles.subBtn}>Send</button>
-                            </div>
-                            <p className={Styles.parf}>Comment</p>
-                            <div className={Styles.last}>
-                                <div className={Styles.circle}>
-                                    <img src={Foto} className={Styles.imge} alt="" />
-                                </div>
-                                <div className={Styles.box}>
-                                    <h3>Ayudia</h3>
-                                    <p className={Styles.farap}>
-                                        Nice recipe. simple and delicious, thankyou
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+                <Comment id={id} />
             </div>
             <Footer />
         </>
