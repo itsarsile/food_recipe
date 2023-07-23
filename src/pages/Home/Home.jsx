@@ -160,7 +160,7 @@ const Home = () => {
           </div>
           <div className="container mt-5">
             <div className='row'>
-              {currentPosts.filter((recipe) => {
+              {recipes.filter((recipe) => {
                 if (search === "") {
                   return recipe
                 } else if (recipe.title.toLowerCase().includes(search.toLowerCase())) {
