@@ -29,7 +29,7 @@ const Login = () => {
       localStorage.setItem("id", data.user.id);
       localStorage.setItem("name", data.user.name);
       localStorage.setItem("photo", data.user.photo);
-      navigate("/Home");
+      navigate("/home");
     })
     .catch((err) => {
       console.log(err.response);
