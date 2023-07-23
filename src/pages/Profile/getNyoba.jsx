@@ -13,7 +13,6 @@ const GetNyoba = () => {
       .catch((err) => {
         console.log(err);
       });
-    console.log(process.env.REACT_APP_API_BACKEND);
   }, []);
 
   return (
@@ -27,6 +26,7 @@ const GetNyoba = () => {
             <th scope="col">photo</th>
             <th scope="col">title</th>
             <th scope="col">details</th>
+            <th scope="col">video</th>
           </tr>
         </thead>
         <tbody>
@@ -34,8 +34,12 @@ const GetNyoba = () => {
             <tr key={item.id} className="text-center">
               <th scope="row">{index + 1}</th>
               <td>{item.userid}</td>
-              <img src={item.photo} className="p-2 rounded" crossOrigin="anonymous" style={{height: 180, width: 220, objectFit: 'cover'}} alt="product-img" /> <td>{item.title}</td>
+              <img src={item.photo} className="p-2 rounded" crossOrigin="anonymous" style={{height: 180, width: 220, objectFit: 'cover'}} alt="product-img" />
+              <td>{item.title}</td>
               <td>{item.details}</td>
+              <video controls>
+                <source src={item.video} type="video/mp4" />
+              </video>
             </tr>
           ))}
         </tbody>

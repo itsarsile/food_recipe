@@ -27,11 +27,23 @@ const Router = () => {
           <Route path="/code" element={<Code />}></Route>
           <Route path="/coba" element={<GetNyoba />} />
           <Route path="/video" element={<DetailVideo />} />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/profile/addRecipe" element={<AddRecipe />} />
           <Route path="/home/detail/:id" element={<DetailRecipe />} />
-          <Route path="/profile" element={<RequireAuth><Profile /></RequireAuth>} />
-          <Route path="/profile/addRecipe" element={<RequireAuth><AddRecipe /></RequireAuth>} />
+          <Route
+            path="/profile"
+            element={
+              <RequireAuth>
+                <Profile />
+              </RequireAuth>
+            }
+          />
+          <Route
+            path="/profile/addRecipe"
+            element={
+              <RequireAuth>
+                <AddRecipe />
+              </RequireAuth>
+            }
+          />
           <Route path="/detail" element={<DetailRecipe />} />
         </Routes>
       </BrowserRouter>

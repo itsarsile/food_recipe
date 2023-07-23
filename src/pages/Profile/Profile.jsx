@@ -1,17 +1,19 @@
 import React from 'react';
-import picPro from '../../assets/image/Profile.png';
+// import picPro from '../../assets/image/Rectangle 313 (1).png';
 import changeProfile from '../../assets/image/icon-edit.png';
 import Footer from '../../components/footer/Footer';
-import card from '../../assets/image/profileCard.png';
 import ModalChangePict from '../../components/modal/ModalChangePict';
 import {useNavigate} from 'react-router-dom';
 import Style from './Profile.css';
 import Navbar from '../../components/navbar/Navbar';
+import MyRecipe from './recipeUser/MyRecipe';
+import LikedRecipe from './recipeUser/LikedRecipe';
+import SavedRecipe from './recipeUser/SavedRecipe';
 
 const Profile = () => {
-  // const idUser = localStorage.getItem("idUser");
-  // const userName = localStorage.getItem("name");
-  // const profilePic = localStorage.getItem("photo");
+  const idUser = localStorage.getItem('id');
+  const userName = localStorage.getItem('name');
+  const profilePic = localStorage.getItem('photo');
   const navigate = useNavigate();
 
   return (
@@ -19,25 +21,25 @@ const Profile = () => {
       <Navbar />
       <div className="container" style={Style}>
         <section>
-          <div className="text-center mt-3" id="profileStyle">
-            <img src={picPro} alt="profilePic" className="rounded-circle w-50 col-md-2 col-6" />
-            {/* <img src={profilePic} alt="profilePic"  className="rounded-circle w-50 col-md-2 col-6" /> */}
-            <div className="dropleft" style={{marginTop: -30, marginLeft: 130}}>
-              <button className="btn btn-outline-light dropdown-toggle rounded-pill" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <div className="text-center m-4" id="profileStyle">
+            {/* <img src={picPro} alt="profilePic" className="mb-2" style={{height: 220, width: 220, borderRadius: '50%', objectFit: 'cover'}} /> */}
+            <img src={profilePic} alt="profilePic" className="mb-2" style={{height: 220, width: 220, borderRadius: '50%', objectFit: 'cover'}} />
+            <div className="dropleft" style={{marginTop: -30, marginLeft: 200}}>
+              <button className="btn btn-outline-secondary dropdown-toggle rounded-pill" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <img src={changeProfile} alt="" className="align-bottom" />
               </button>
               <div className="dropdown-menu bg-secondary text-center" aria-labelledby="dropdownMenu2">
                 <button className="dropdown-item" type="button">
-                  <ModalChangePict />
-                  {/* <ModalChangePict id={idUser} name={userName} /> */}
+                  {/* <ModalChangePict /> */}
+                  <ModalChangePict id={idUser} name={userName} />
                 </button>
                 <button className="dropdown-item" type="button" onClick={() => navigate('/resetpassword')}>
                   Change Password
                 </button>
               </div>
             </div>
-            {/* <h5>{userName}</h5> */}
-            <h5>User name</h5>
+            <h5>{userName}</h5>
+            {/* <h5>User name</h5> */}
           </div>
         </section>
         <section className="mb-5">
@@ -57,35 +59,14 @@ const Profile = () => {
             </nav>
             <card className="tab-content" id="nav-tabContent">
               <div className="tab-pane fade show active " id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-                <div className="row p-3" id="profileStyle">
-                  <div className="col-md-3 col-6 p-1 mb-4">
-                    <img src={card} alt="" className="col-12" />
-                    <h5 className="col-md-3 col-6 pl-4 text-white" style={{marginTop: -60}}>
-                      Glaze Donut
-                    </h5>
-                  </div>
-                  <div className="col-md-3 col-6 p-1  mb-4">
-                    <img src={card} alt="" className="col-12" />
-                    <h5 className="col-md-3 col-6 pl-4 text-white" style={{marginTop: -60}}>
-                      Glaze Donut
-                    </h5>
-                  </div>
-                  <div className="col-md-3 col-6 p-1  mb-4">
-                    <img src={card} alt="" className="col-12" />
-                    <h5 className="col-md-3 col-6 pl-4 text-white" style={{marginTop: -60}}>
-                      Glaze Donut
-                    </h5>
-                  </div>
-                  <div className="col-md-3 col-6 p-1  mb-4">
-                    <img src={card} alt="" className="col-12" />
-                    <h5 className="col-md-3 col-6 pl-4 text-white" style={{marginTop: -60}}>
-                      Glaze Donut
-                    </h5>
-                  </div>
-                </div>
+                <MyRecipe />
               </div>
-              <div className="tab-pane fade" id="nav-saved" role="tabpanel" aria-labelledby="nav-saved-tab"></div>
-              <div className="tab-pane fade" id="nav-liked" role="tabpanel" aria-labelledby="nav-liked-tab"></div>
+              <div className="tab-pane fade" id="nav-saved" role="tabpanel" aria-labelledby="nav-saved-tab">
+                <LikedRecipe />
+              </div>
+              <div className="tab-pane fade" id="nav-liked" role="tabpanel" aria-labelledby="nav-liked-tab">
+                <SavedRecipe />
+              </div>
             </card>
           </>
         </section>
