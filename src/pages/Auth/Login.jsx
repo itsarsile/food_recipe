@@ -98,19 +98,15 @@ const Login = () => {
         />
       </div>
       <div className="mt-3 mb-1">
-        <input type="checkbox" id="agree-checkbox" name="agree" />
-        <label htmlFor="agree-checkbox">
-          I agree to terms &amp; conditions
-        </label>
       </div>
       <button type="submit" className="mt-4 btn btn-warning" id="brl">
         Log in
       </button>
       <Link to={"/forgotpassword"} id="fp">
-        Forgot password?
+        Forgot password ?
       </Link>
       <p className="mt-4">
-        Dont have an account?
+        Dont have an account ?&nbsp;
         <Link to={"/register"} id="reg">
           Register
         </Link>

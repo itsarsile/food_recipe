@@ -3,14 +3,14 @@ body {
 }
 
 #img2 {
-    width: 47.5vw;
+    width: 47vw;
     height: 100vh;
     z-index: -1;
     position: relative;
 }
 
 #img1 {
-    width: 47.5vw;
+    width: 47vw;
     height: 100vh;
     z-index: -1;
     position: relative;
@@ -31,7 +31,7 @@ body {
 }
 
 #fp {
-    margin-left: 300px;
+    margin-left: 290px;
     color: #8692A6;
 }
 
