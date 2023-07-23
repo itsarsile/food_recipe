@@ -5,7 +5,10 @@ import {useNavigate} from 'react-router-dom';
 
 const Navbar = () => {
   const navigate = useNavigate();
-
+  const Logout = () => {
+    localStorage.clear();
+    window.location.reload();
+  };
   return (
     <nav className="navbar container navbar-expand-lg" style={Styles}>
       <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
@@ -28,7 +31,7 @@ const Navbar = () => {
           </li>
         </ul>
         <form className="form-inline my-2 my-lg-0">
-          <button id="linkNavigate" onClick={(e) => localStorage.removeItem('token')} className="btn btn-warning rounded-pill" style={{cursor: 'pointer'}}>
+          <button id="linkNavigate" onClick={Logout} className="btn btn-warning rounded-pill" style={{cursor: 'pointer'}}>
             Log Out
           </button>
         </form>
