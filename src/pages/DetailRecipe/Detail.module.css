@@ -24,6 +24,9 @@ body {
   font-weight: 550;
 }
 .photo {
+  width: 100%;
+}
+.pth {
   width: 70%;
   position: relative;
 }
@@ -108,7 +111,6 @@ body {
 }
 .last {
   margin-left: 120px;
-  width: 500px;
   height: 60px;
   display: flex;
   margin-bottom: 100px;
@@ -129,9 +131,9 @@ body {
   font-size: 13px;
 }
 .bton{
+  margin-left: 20px;
   position: absolute;
   bottom: 20px;
-  left: 800px;
 }
 .save{
   width: 30px;
@@ -183,4 +185,5 @@ body {
   .parf{
     margin-left: 0;
   }
+
 }

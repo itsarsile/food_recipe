@@ -17,7 +17,6 @@ body {
   overflow-x: hidden;
 }
 
-
 .h {
   color: #2e266f;
   font-size: 55px;
@@ -72,13 +71,13 @@ body {
   position: relative;
 }
 .rep {
-  width: 400px;
+  width: 310px;
   height: 900px;
   background-color: #efc81a;
   position: absolute;
   z-index: -2;
-
-  left: 970px;
+  
+  left: 900px;
   bottom: 1px;
 }
 
@@ -121,10 +120,9 @@ body {
 .ont {
   width: 100%;
 }
-.rel{
+.rel {
   position: relative;
-  overflow-y: hidden
-;
+  overflow-y: hidden;
 }
 .vectorr {
   width: 300px;
@@ -133,14 +131,13 @@ body {
 
   left: 377px;
   bottom: 220px;
-
 }
 .n {
   width: 150px;
   margin-left: 8px;
 }
 .frs {
-  width: 500px;
+  /* width: 500px; */
   height: 500px;
   margin-top: 50px;
 }
@@ -152,7 +149,7 @@ body {
   margin-top: 50px;
 }
 .thr {
-  width: 400px;
+  /* width: 400px; */
   height: 500px;
   margin-top: 40px;
 }
@@ -241,79 +238,79 @@ body {
   width: 247px;
   margin-top: 40px;
 }
-.wrapr{
+.wrapr {
   display: flex;
 }
-.wraprr{
+.wraprr {
   display: flex;
 }
 
-@media screen and (max-width: 600px){  
-  .photoawal{
+@media screen and (max-width: 600px) {
+  .photoawal {
     display: none;
   }
-  .photokedua{
+  .photokedua {
     display: none;
   }
-  .photoketiga{
+  .photoketiga {
     display: none;
   }
-  .header1{
+  .header1 {
     margin-top: 50px;
-    padding-left:20px ;
+    padding-left: 20px;
   }
-  .h{
+  .h {
     width: 350px;
   }
-  .put{
+  .put {
     width: 290px;
   }
-  .slice{
+  .slice {
     margin-top: 0;
   }
-  .wrap{
+  .wrap {
     margin-left: 29px;
   }
-  .wrapp{
+  .wrapp {
     margin-top: 30px;
     margin-left: 45px;
   }
-  .frs{
+  .frs {
     margin-top: 0;
     height: 400px;
   }
-  .scn{
+  .scn {
     background-color: #fff5ec;
     margin-top: 0;
   }
-  .thr{
+  .thr {
     margin-top: 0;
   }
-  .bgr{
+  .bgr {
     width: 328px;
     margin-left: 0;
   }
-  .wrapr{
+  .wrapr {
     flex-direction: column;
   }
-  .wrapper{
+  .wrapper {
     margin-top: 0;
     margin-left: 0;
   }
-  .wrappe1{
+  .wrappe1 {
     margin-right: 0;
     margin-left: 40px;
   }
-  .wrappe2{
+  .wrappe2 {
     margin-left: 40px;
-    }
-  .wrappe3{
+  }
+  .wrappe3 {
     margin-left: 40px;
-    }
-  .product{
+  }
+  .product {
     margin-top: 40px;
   }
-  .rep{
+  .rep {
     display: none;
   }
 }
