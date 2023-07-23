@@ -1,0 +1,190 @@
+@font-face {
+  font-family: AirbnbCereal;
+  src: url("../../assets/font/AirbnbCereal_W_Md.otf");
+}
+body {
+  font-family: AirbnbCereal !important;
+}
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  height: 100vh;
+}
+.wrappe {
+  margin-top: 50px;
+  padding-left: 100px;
+  height: 400px;
+}
+#txt {
+  color: #2e266f;
+  font-size: 50px;
+  font-weight: 550;
+}
+.photo {
+  width: 100%;
+}
+.pth {
+  width: 70%;
+  position: relative;
+}
+.ha3 {
+  font-size: 35px;
+  color: #3f3a3a;
+}
+.list {
+  margin-top: 50px;
+  width: 380px;
+}
+.text {
+  font-size: 20px;
+  color: #000000;
+  font-weight: 300;
+}
+.video {
+  margin-top: 50px;
+  font-size: 35px;
+  color: #3f3a3a;
+}
+.lists {
+  width: 250px;
+  height: 60px;
+}
+.btn {
+  background-color: #efc81a;
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 5px;
+  margin-top: 50px;
+}
+.icon {
+  background-color: #fff;
+}
+
+.wrap {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin-top: 100px;
+}
+.comment {
+  width: 80%;
+  height: 250px;
+  margin-left: 120px;
+  border: none;
+  border-radius: 10px;
+  background-color: #f6f5f4;
+}
+.paraf {
+  position: absolute;
+
+  left: 150px;
+  top: 30px;
+}
+.mainBtn {
+  width: 250px;
+  height: 40px;
+  border: none;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+}
+.subBtn {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 6px;
+  background-color: #efc81a;
+  color: #fff;
+}
+.paraf {
+  font-size: 20px;
+  color: #666666;
+}
+.parf {
+  margin-left: 120px;
+  margin-top: 50px;
+  font-size: 35px;
+  color: #3f3a3a;
+}
+.last {
+  margin-left: 120px;
+  height: 60px;
+  display: flex;
+  margin-bottom: 50px;
+}
+.circle {
+  width: 50px;
+  height: 50px;
+}
+.imge {
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+}
+.box {
+  margin-left: 20px;
+}
+.farap {
+  font-size: 13px;
+}
+.bton{
+  margin-left: 20px;
+  position: absolute;
+  bottom: 20px;
+}
+.save{
+  width: 30px;
+  height: 30px;
+  background-color: #efc81a;
+  border: none;
+  border-radius: 5px;
+}
+.like{
+  width: 30px;
+  height: 30px;
+  background-color: #fff;
+  border: 1px solid #efc81a;
+  border-radius: 5px;
+  margin-left: 20px;
+}
+
+@media screen and (max-width: 600px) {
+  .photo {
+    width: 100%;
+  }
+  #txt {
+    margin-left: 50px;
+  }
+  .wrapper {
+    margin-top: 0;
+    height: 500px;
+  }
+  .wrappe {
+    margin-top: 30px;
+    padding-left: 0;
+  }
+  .list{
+    width: 350px;
+  }
+  .comment{
+    width: 100%;
+    height: 100px;
+    margin-left: 0;
+  }
+  .paraf{
+    top: 10px;
+    left: 10px;
+    font-size: 16px;
+  }
+  .last{
+    margin-left: 0;
+  }
+  .parf{
+    margin-left: 0;
+  }
+
+}
