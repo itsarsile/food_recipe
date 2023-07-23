@@ -15,17 +15,17 @@ const DetailRecipe = () => {
     const { id } = useParams();
     const [userId, setUserId] = useState("");
     const [recipe, setRecipe] = useState("");
-    const [data, setData] = useState({
-        userid: "",
-        recipeid: "",
-    });
+    // const [data, setData] = useState({
+    //     userid: "",
+    //     recipeid: "",
+    // });
 
-    const handleChange = (e) => {
-        setData({
-            ...data,
-            [e.target.name]: e.target.value,
-        });
-    };
+    // const handleChange = (e) => {
+    //     setData({
+    //         ...data,
+    //         [e.target.name]: e.target.value,
+    //     });
+    // };
 
     useEffect(() => {
         const storedUserId = localStorage.getItem("id");
