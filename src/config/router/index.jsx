@@ -10,7 +10,6 @@ import ResetPassword from '../../pages/Auth/ResetPassword';
 import Code from '../../pages/Auth/Code';
 import GetNyoba from '../../pages/Profile/getNyoba';
 import DetailRecipe from '../../pages/DetailRecipe/DetailRecipe';
-import DetailVideo from '../../pages/DetailVideo/DetailVideo';
 import RequireAuth from '../../pages/Auth/RequireAuth';
 
 const Router = () => {
@@ -26,7 +25,6 @@ const Router = () => {
           <Route path="/resetpassword" element={<ResetPassword />}></Route>
           <Route path="/code" element={<Code />}></Route>
           <Route path="/coba" element={<GetNyoba />} />
-          <Route path="/video" element={<DetailVideo />} />
           <Route path="/home/detail/:id" element={<DetailRecipe />} />
           <Route
             path="/profile"

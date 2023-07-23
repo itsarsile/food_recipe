@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import Navbar from "../../components/navbar/Navbar";
 import Styles from "./Detail.module.css";
 import Play from "../../assets/image/play.png";
 import Footer from "../../components/footer/Footer";
@@ -8,6 +7,7 @@ import axios from "axios";
 import Modal from "react-bootstrap/Modal";
 import Swal from 'sweetalert2'
 import Comment from "./Comment";
+import RequireLogin from "../Auth/RequireLogin";
 
 const DetailRecipe = () => {
     const [lgShow, setLgShow] = useState(false);
@@ -73,7 +73,7 @@ const DetailRecipe = () => {
     return (
         <>
         
-            <Navbar />
+        <RequireLogin />
             <div className="container">
                 <section>
                     <div className="col-12">
