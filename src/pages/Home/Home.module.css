@@ -218,20 +218,10 @@ body {
   width: 100%;
 }
 .titles {
-  color: #3f3a3a;
+  color: #fff;
   font-family: AirbnbCereal;
   font-size: 15px;
   width: 84px;
-  position: absolute;
-
-  left: 20px;
-  bottom: 20px;
-}
-.titless {
-  color: #3f3a3a;
-  font-family: AirbnbCereal;
-  font-size: 15px;
-  width: 90px;
   position: absolute;
 
   left: 20px;
