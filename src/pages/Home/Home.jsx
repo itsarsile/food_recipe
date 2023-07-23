@@ -1,17 +1,22 @@
 import Styles from './Home.module.css'
-// import burger from '../../assets/img/Rectangle 313.png'
 import Footer from '../../components/footer/Footer'
 import 'react-multi-carousel/lib/styles.css';
-import Section1 from './section/Section1'
 import Carousel from 'react-multi-carousel';
 import three from '../../assets/img/Make Vector.png'
 import Product from './section/Product'
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+// import NavbarLogin from '../../components/navbarLogin/NavbarLogin'
+import delicious from '../../assets/img/—Pngtree—delicious food_568171 1.png'
+import vector from '../../assets/img/Make Vector BG.png'
+import salad from '../../assets/img/—Pngtree—lettuce_1175257 1.png'
+// import Pagination from './Pagination';
+import RequireLogin from '../Auth/RequireLogin';
 
 
 const Home = () => {
+  const navigate = useNavigate();
   const responsive = {
     superLargeDesktop: {
       // the naming can be any, depends on you.
@@ -39,19 +44,63 @@ const Home = () => {
   useEffect(() => {
     axios.get('https://food-recipe-be.onrender.com/recipes')
       .then((res) => {
-        console.log(res.data.data);
         setRecipes(res.data.data);
       })
   }, []);
 
+  // const [search, setSearch] = useState("")
+
   const products = recipes.map(recipe => (
-    <Product title={recipe.title} photo={recipe.photo} />
+    <Link to={`detail/${recipe.id}`}>
+      <Product title={recipe.title} photo={recipe.photo} />
+    </Link>
   ))
+
+  // const [currentPage, setCurrentPage] = useState(1);
+  // const [postPerPage, setPostPerpage] = useState(3)
+
+  // const lastPostIndex = currentPage * postPerPage;
+  // const firstPostIndex = lastPostIndex - postPerPage;
+  // const currentPosts = recipes.slice(firstPostIndex, lastPostIndex);
 
   return (
     <>
       <div className={Styles.bdy}>
-        <Section1 />
+
+        <section className={Styles.se}>
+          <RequireLogin />
+          <div className="container">
+            <div className="row">
+              <div className="col-6">
+                <div className={Styles.header1}>
+                  <h1 className={Styles.h}>Discover Recipe</h1>
+                  <h1 className={Styles.h}>&amp; Delicious Food</h1>
+                  <div className={Styles.put}>
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder="Search Recipe" className={Styles.nput}  />
+                  </div>
+                </div>
+              </div>
+              <div className="col-6">
+                <div className="row">
+                  <div className={Styles.box}>
+                    <img
+                      src={delicious}
+                      className={Styles.photoawal}
+                      alt="Delicious food"
+                    />
+                    <img src={vector} className={Styles.photokedua} alt="Vector Bg" />
+                    <img src={salad} className={Styles.photoketiga} alt="Lettuce" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <div className={Styles.re}>
+          <div className={Styles.rep}></div>
+        </div>
+
         <section className={Styles.se}>
           <div className="container mt-5">
             <div className="row">
@@ -95,7 +144,7 @@ const Home = () => {
                   <div className={Styles.line}></div>
                   <p className={Styles.p}>{recipe.details}</p>
                   <div className={Styles.btn}>
-                    <button className={Styles.buttn}>Learn More</button>
+                    <button className={Styles.buttn} onClick={() => navigate(`detail/${recipe.id}`)}>Learn More</button>
                   </div>
                 </div>
               </div>
@@ -122,6 +171,21 @@ const Home = () => {
                   </Link>
                 </div>
               )))}
+              {/* <Pagination
+                totalPosts={recipes.length}
+                postPerPage={postPerPage}
+                setCurrentPage={setCurrentPage}
+                currentPage={currentPage}
+                .filter(recipe => {
+                if (search === "") {
+                  return recipe
+                } else if (recipe.title.toLowerCase().includes(search.toLowerCase())) {
+                  return recipe
+                }
+              })
+              /> 
+              
+              onChange={(e) => setSearch(e.target.value)}*/}
             </div>
           </div>
         </section >

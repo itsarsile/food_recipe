@@ -5,7 +5,7 @@ const Product = (props) => {
         <>
             <div>
                 <img
-                    className="photo"
+                    className={Styles.photo}
                     id={Styles.on}
                     src={props.photo}
                     alt="Popular for you"
