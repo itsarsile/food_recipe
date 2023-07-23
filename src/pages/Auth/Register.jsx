@@ -6,32 +6,39 @@ import { Link, useNavigate } from 'react-router-dom';
 
 const Register = () => {
     const navigate = useNavigate();
-    const [register ,setRegister] = useState({
-        name:"",
-        email:"",
-        password:"",
-        phone:"",
+    const [register, setRegister] = useState({
+      name: '',
+      email: '',
+      password: '',
+      phone: '',
     });
-
+    const [agreeTerms, setAgreeTerms] = useState(false); 
+  
     const handleChange = (e) => {
-        setRegister({
-            ...register,
-            [e.target.name]: e.target.value
-        });
+      setRegister({
+        ...register,
+        [e.target.name]: e.target.value,
+      });
     };
-
+  
     const handleRegister = (e) => {
-        e.preventDefault();
-        const registerData = { ...register};
-        axios.post("https://food-recipe-be.onrender.com/users/register",registerData)
+      e.preventDefault();
+      if (!agreeTerms) {
+        alert('Please agree to the terms & conditions to proceed with registration.');
+        return;
+      }
+  
+      const registerData = { ...register };
+      axios
+        .post('https://food-recipe-be.onrender.com/users/register', registerData)
         .then((res) => {
-            alert("Succesful Register");
-            navigate("/Login");
+          alert('Successful Register');
+          navigate('/Login');
         })
         .catch((err) => {
-            console.log(err.response);
-            alert("Signup Failed")
-        })
+          console.log(err.response);
+          alert('Signup Failed');
+        });
     };
 
     return (
@@ -126,16 +133,16 @@ const Register = () => {
                         />
                     </div>
                     <div className="mt-3 mb-1">
-                        <input type="checkbox" id="agree-checkbox" name="agree" />
+                        <input type="checkbox" id="agree-checkbox" name="agree" checked={agreeTerms} onChange={(e) => setAgreeTerms(e.target.checked)}/>
                         <label htmlFor="agree-checkbox">
                             I agree to terms &amp; conditions
                         </label>
                     </div>
-                    <button type="submit" className="mt-4 btn btn-warning" id="brr" onClick={handleRegister}>
+                    <button type="submit" className="mt-4 btn btn-warning" id="brr" onClick={handleRegister} disabled={!agreeTerms}>
                         Register Account
                     </button>
                     <p className="mt-4">
-                        Already have account?
+                        Already have account ?&nbsp;
                         <Link to={"/Login"} id="reg">
                             Login here
                         </Link>

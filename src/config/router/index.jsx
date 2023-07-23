@@ -8,9 +8,9 @@ import Register from '../../pages/Auth/Register';
 import ForgotPassword from '../../pages/Auth/ForgotPassword';
 import ResetPassword from '../../pages/Auth/ResetPassword';
 import Code from '../../pages/Auth/Code';
-import GetNyoba from '../../pages/Profile/getNyoba';
 import DetailRecipe from '../../pages/DetailRecipe/DetailRecipe';
 import RequireAuth from '../../pages/Auth/RequireAuth';
+import Pages404 from '../../pages/Pages404';
 
 const Router = () => {
   return (
@@ -24,7 +24,6 @@ const Router = () => {
           <Route path="/forgotpassword" element={<ForgotPassword />}></Route>
           <Route path="/resetpassword" element={<ResetPassword />}></Route>
           <Route path="/code" element={<Code />}></Route>
-          <Route path="/coba" element={<GetNyoba />} />
           <Route path="/home/detail/:id" element={<DetailRecipe />} />
           <Route
             path="/profile"
@@ -43,6 +42,7 @@ const Router = () => {
             }
           />
           <Route path="/detail" element={<DetailRecipe />} />
+          <Route path='*' element={<Pages404 />}></Route>
         </Routes>
       </BrowserRouter>
     </div>
