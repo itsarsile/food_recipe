@@ -18,7 +18,7 @@ const MyRecipe = () => {
       .catch((err) => {
         console.log(err);
       });
-  }, []);
+  }, [idUser]);
   return (
     <div>
       <div className="row p-3" id="profileStyle">

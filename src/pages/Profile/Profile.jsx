@@ -24,7 +24,7 @@ const Profile = () => {
       .catch((err) => {
         console.log(err);
       });
-  }, []);
+  }, [idUser]);
 
   return (
     <>
