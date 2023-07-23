@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 // import picPro from '../../assets/image/Rectangle 313 (1).png';
 import changeProfile from '../../assets/image/icon-edit.png';
 import Footer from '../../components/footer/Footer';
@@ -9,12 +9,22 @@ import Navbar from '../../components/navbar/Navbar';
 import MyRecipe from './recipeUser/MyRecipe';
 import LikedRecipe from './recipeUser/LikedRecipe';
 import SavedRecipe from './recipeUser/SavedRecipe';
+import axios from 'axios';
 
 const Profile = () => {
   const idUser = localStorage.getItem('id');
-  const userName = localStorage.getItem('name');
-  const profilePic = localStorage.getItem('photo');
   const navigate = useNavigate();
+  const [profiles, setProfiles] = useState([]);
+  useEffect(() => {
+    axios
+      .get(`https://food-recipe-be.onrender.com/users/${idUser}`)
+      .then((res) => {
+        setProfiles(res.data.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
 
   return (
     <>
@@ -22,24 +32,21 @@ const Profile = () => {
       <div className="container" style={Style}>
         <section>
           <div className="text-center m-4" id="profileStyle">
-            {/* <img src={picPro} alt="profilePic" className="mb-2" style={{height: 220, width: 220, borderRadius: '50%', objectFit: 'cover'}} /> */}
-            <img src={profilePic} alt="profilePic" className="mb-2" style={{height: 220, width: 220, borderRadius: '50%', objectFit: 'cover'}} />
+            <img src={profiles.photo} alt="profilePic" className="mb-2" style={{height: 220, width: 220, borderRadius: '50%', objectFit: 'cover'}} />
             <div className="dropleft" style={{marginTop: -30, marginLeft: 200}}>
               <button className="btn btn-outline-secondary dropdown-toggle rounded-pill" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <img src={changeProfile} alt="" className="align-bottom" />
               </button>
               <div className="dropdown-menu bg-secondary text-center" aria-labelledby="dropdownMenu2">
                 <button className="dropdown-item" type="button">
-                  {/* <ModalChangePict /> */}
-                  <ModalChangePict id={idUser} name={userName} />
+                  <ModalChangePict id={idUser} name={profiles.name} />
                 </button>
                 <button className="dropdown-item" type="button" onClick={() => navigate('/resetpassword')}>
                   Change Password
                 </button>
               </div>
             </div>
-            <h5>{userName}</h5>
-            {/* <h5>User name</h5> */}
+            <h5>{profiles.name}</h5>
           </div>
         </section>
         <section className="mb-5">

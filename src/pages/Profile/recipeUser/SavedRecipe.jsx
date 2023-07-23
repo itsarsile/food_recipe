@@ -23,8 +23,8 @@ const SavedRecipe = () => {
       <div className="row p-3" id="profileStyle">
         {recipes.map((recipe) => (
           <div className="col-md-3 col-12 p-1 mb-5">
-            <Link to={`/detail/${recipe.id}`}>
-              <img src={recipe.photo} alt="" className="col-12" style={{filter: 'brightness(70%)', height: 150, objectFit: 'cover'}} />
+            <Link to={`/home/detail/${recipe.id}`}>
+              <img src={recipe.photo} alt="" className="col-12" style={{filter: 'brightness(70%)', height: 150, objectFit: 'cover', borderRadius: '10%'}} />
             </Link>
             <div className="form-inline justify-content-around" style={{marginTop: -60}}>
               <h5 className="col-md-7 col-6 ml-1 text-white">{recipe.title}</h5>

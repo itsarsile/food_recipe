@@ -7,11 +7,12 @@ import Footer from '../../components/footer/Footer';
 import Navbar from '../../components/navbar/Navbar';
 import Style from './Profile.css';
 import axios from 'axios';
+import Swal from 'sweetalert2';
 
 const AddRecipe = () => {
   const idUser = localStorage.getItem('id');
   let [data, setData] = useState({
-    userid: idUser,
+    userid: Number(idUser),
     title: '',
     details: '',
     recipeVideo: null,
@@ -59,10 +60,14 @@ const AddRecipe = () => {
         },
       })
       .then((res) => {
-        alert('Add Recipe successful');
+        Swal.fire({
+          icon: 'success',
+          title: 'Update Profile Success',
+          text: 'Profile has been save',
+        });
         setTimeout(function () {
-          window.location.reload(1);
-        }, 1500);
+          window.location.reload();
+        }, 1000);
       })
       .catch((err) => {
         alert('Add Recipe failed');
