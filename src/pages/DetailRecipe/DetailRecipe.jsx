@@ -15,15 +15,16 @@ const DetailRecipe = () => {
     const { id } = useParams();
     const [recipe, setRecipe] = useState("");
     const [data, setData] = useState({
-        userId: ""
+        userid: "",
+        recipeid: ""
     })
 
-    // const handleChange = (e) => {
-    //     setData({
-    //         ...data,
-    //         [e.target.name]: e.target.value
-    //     })
-    // }
+    const handleChange = (e) => {
+        setData({
+            ...data,
+            [e.target.name]: e.target.value
+        })
+    }
 
     useEffect(() => {
         axios.get(`https://food-recipe-be.onrender.com/recipes/${id}`)
@@ -36,6 +37,16 @@ const DetailRecipe = () => {
             })
     }, [id])
 
+    const handleSubmit = (e) =>{
+        e.preventDefault();
+        axios.post(`https://food-recipe-be.onrender.com/recipes/saved/user`,data)
+        .then((res)=>{
+            console.log(res);
+        })
+        .catch((err)=>{
+            console.log(err);
+        })
+    }
     return (
         <>
             <Navbar />
@@ -47,12 +58,14 @@ const DetailRecipe = () => {
                             <div className={Styles.pth}>
                                 <img src={recipe.photo} className={Styles.photo} alt="Logo product" />
                                 <div className={Styles.bton}>
-                                    <button className={Styles.save}>
+                                    <form onSubmit={handleSubmit}>
+                                    <button className={Styles.save} onChange={handleChange}>
                                         <i className="fa-regular fa-bookmark fa-lg"></i>
                                     </button>
                                     <button className={Styles.like}>
                                         <i className="fa-regular fa-thumbs-up fa-lg"></i>
                                     </button>
+                                    </form>
                                 </div>
                             </div>
                         </div>
