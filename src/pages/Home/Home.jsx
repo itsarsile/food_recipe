@@ -7,11 +7,12 @@ import Product from './section/Product'
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { Link, useNavigate } from 'react-router-dom';
-import NavbarLogin from '../../components/navbarLogin/NavbarLogin'
+// import NavbarLogin from '../../components/navbarLogin/NavbarLogin'
 import delicious from '../../assets/img/—Pngtree—delicious food_568171 1.png'
 import vector from '../../assets/img/Make Vector BG.png'
 import salad from '../../assets/img/—Pngtree—lettuce_1175257 1.png'
 import Pagination from './Pagination';
+import RequireLogin from '../Auth/RequireLogin';
 
 
 const Home = () => {
@@ -67,7 +68,7 @@ const Home = () => {
       <div className={Styles.bdy}>
 
         <section className={Styles.se}>
-          <NavbarLogin />
+          <RequireLogin />
           <div className="container">
             <div className="row">
               <div className="col-6">
