@@ -1,28 +1,18 @@
-import axios from 'axios';
 import React, {useState} from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
+import delRecipeAction from '../../config/redux/actions/delRecipeAction';
+import {useDispatch} from 'react-redux';
 
 function ModalDelRecipe({id}) {
-  //   const dispatch = useDispatch();
+  const dispatch = useDispatch();
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios
-      .delete(`https://food-recipe-be.onrender.com/recipes/${id}`)
-      .then((res) => {
-        alert('Delete Recipe successful');
-        setTimeout(function () {
-          handleClose();
-          window.location.reload();
-        }, 1500);
-      })
-      .catch((err) => {
-        alert('Delete Recipe failed');
-      });
+    dispatch(delRecipeAction(id, setShow));
   };
 
   return (
