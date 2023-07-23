@@ -7,6 +7,15 @@ import Footer from "../../components/footer/Footer";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import Modal from "react-bootstrap/Modal";
+import React, { useEffect, useState } from "react";
+import Navbar from "../../components/navbar/Navbar";
+import Foto from "../../assets/image/Ellipse 128.png";
+import Styles from "./Detail.module.css";
+import Play from "../../assets/image/play.png";
+import Footer from "../../components/footer/Footer";
+import { useParams } from "react-router-dom";
+import axios from "axios";
+import Modal from "react-bootstrap/Modal";
 import Swal from 'sweetalert2'
 
 const DetailRecipe = () => {
@@ -20,80 +29,58 @@ const DetailRecipe = () => {
     recipeid: "",
   });
 
-  const handleChange = (e) => {
-    setData({
-      ...data,
-      [e.target.name]: e.target.value,
-    });
-  };
+    const handleChange = (e) => {
+        setData({
+            ...data,
+            [e.target.name]: e.target.value
+        })
+    }
 
-  useEffect(() => {
-    const storedUserId = localStorage.getItem("id");
-    setUserId(storedUserId);
-  }, []);
+    useEffect(() => {
+        axios.get(`https://food-recipe-be.onrender.com/recipes/${id}`)
+            .then((res) => {
+                setRecipe(res.data.data.recipeData[0]);
+                // setRecipe(res.data.data.userData[0]);
+            })
+            .catch((err) => {
+                console.log(err);
+            })
+    }, [id])
 
-  useEffect(() => {
-    axios
-      .get(`https://food-recipe-be.onrender.com/recipes/${id}`)
-      .then((res) => {
-        setRecipe(res.data.data.recipeData[0]);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, [id]);
-
-  const handleSave = (e) => {
-    e.preventDefault();
-    axios.post(
-      `https://food-recipe-be.onrender.com/recipes/saved/${id}/user/${userId}`
-    ).then((res)=>{
-        Swal.fire({
-            icon: 'success',
-            title: 'Yeayy',
-            text: 'Data has been save',
-          })
-    })
-    .catch((err)=>{
-        console.log(err);
-    })
-    
-  };
-
-  const handleLike = (e) => {
-    e.preventDefault();
-    axios.post(
-      `https://food-recipe-be.onrender.com/recipes/liked/${id}/user/${userId}`
-    );
-  };
-  return (
-    <>
-      <Navbar />
-      <div className="container">
-        <section>
-          <div className="col-12">
-            <div className={Styles.wrapper}>
-              <h1 className="mb-5" id={Styles.txt}>
-                {recipe.title}
-              </h1>
-              <div className={Styles.pth}>
-                <img
-                  src={recipe.photo}
-                  className={Styles.photo}
-                  alt="Logo product"
-                />
-                <div className={Styles.bton}>
-                  <button className={Styles.save} onClick={handleSave}>
-                    <i className="fa-regular fa-bookmark fa-lg"></i>
-                  </button>
-                  <button className={Styles.like} onClick={handleLike}>
-                    <i className="fa-regular fa-thumbs-up fa-lg"></i>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+    const handleSubmit = (e) =>{
+        e.preventDefault();
+        axios.post(`https://food-recipe-be.onrender.com/recipes/saved/user`,data)
+        .then((res)=>{
+            console.log(res);
+        })
+        .catch((err)=>{
+            console.log(err);
+        })
+    }
+    return (
+        <>
+            <Navbar />
+            <div className="container">
+                <section>
+                    <div className="col-12">
+                        <div className={Styles.wrapper}>
+                            <h1 className='mb-5' id={Styles.txt}>{recipe.title}</h1>
+                            <div className={Styles.pth}>
+                                <img src={recipe.photo} className={Styles.photo} alt="Logo product" />
+                                <div className={Styles.bton}>
+                                    <form onSubmit={handleSubmit}>
+                                    <button className={Styles.save} onChange={handleChange}>
+                                        <i className="fa-regular fa-bookmark fa-lg"></i>
+                                    </button>
+                                    <button className={Styles.like}>
+                                        <i className="fa-regular fa-thumbs-up fa-lg"></i>
+                                    </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
 
         <section>
           <div className={Styles.wrappe}>
@@ -131,37 +118,33 @@ const DetailRecipe = () => {
           </div>
         </section>
 
-        <section>
-          <div className={Styles.wrapp}>
-            <div className={Styles.wrap}>
-              <textarea
-                type="text"
-                className={Styles.comment}
-                placeholder="Comment :"
-              />
-              {/* <p className={Styles.paraf}>Comment :</p> */}
-              <div className={Styles.mainBtn}>
-                <button className={Styles.subBtn}>Send</button>
-              </div>
-              <p className={Styles.parf}>Comment</p>
-              <div className={Styles.last}>
-                <div className={Styles.circle}>
-                  <img src={Foto} className={Styles.imge} alt="" />
-                </div>
-                <div className={Styles.box}>
-                  <h3>Ayudia</h3>
-                  <p className={Styles.farap}>
-                    Nice recipe. simple and delicious, thankyou
-                  </p>
-                </div>
-              </div>
+                <section>
+                    <div className={Styles.wrapp}>
+                        <div className={Styles.wrap}>
+                            <textarea type="text" className={Styles.comment} placeholder='Comment :' />
+                            {/* <p className={Styles.paraf}>Comment :</p> */}
+                            <div className={Styles.mainBtn}>
+                                <button className={Styles.subBtn}>
+                                    Send
+                                </button>
+                            </div>
+                            <p className={Styles.parf}>Comment</p>
+                            <div className={Styles.last}>
+                                <div className={Styles.circle}>
+                                    <img src={Foto} className={Styles.imge} alt="" />
+                                </div>
+                                <div className={Styles.box}>
+                                    <h3>Ayudia</h3>
+                                    <p className={Styles.farap}>Nice recipe. simple and delicious, thankyou</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </div>
-          </div>
-        </section>
-      </div>
-      <Footer />
-    </>
-  );
-};
+            <Footer />
+        </>
+    )
+}
 
-export default DetailRecipe;
+export default DetailRecipe
