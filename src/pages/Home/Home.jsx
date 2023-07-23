@@ -13,6 +13,7 @@ import vector from '../../assets/img/Make Vector BG.png'
 import salad from '../../assets/img/—Pngtree—lettuce_1175257 1.png'
 // import Pagination from './Pagination';
 import RequireLogin from '../Auth/RequireLogin';
+import Pagination from './Pagination';
 
 
 const Home = () => {
@@ -56,12 +57,12 @@ const Home = () => {
     </Link>
   ))
 
-  // const [currentPage, setCurrentPage] = useState(1);
-  // const [postPerPage, setPostPerpage] = useState(3)
+  const [currentPage, setCurrentPage] = useState(1);
+  const [postsPerPage] = useState(6);
 
-  // const lastPostIndex = currentPage * postPerPage;
-  // const firstPostIndex = lastPostIndex - postPerPage;
-  // const currentPosts = recipes.slice(firstPostIndex, lastPostIndex);
+  const lastPostIndex = currentPage * postsPerPage;
+  const firstPostIndex = lastPostIndex - postsPerPage;
+  const currentPosts = recipes.slice(firstPostIndex, lastPostIndex);
 
   return (
     <>
@@ -77,7 +78,7 @@ const Home = () => {
                   <h1 className={Styles.h}>&amp; Delicious Food</h1>
                   <div className={Styles.put}>
                     <i class="fa-solid fa-magnifying-glass"></i>
-                    <input type="text" placeholder="Search Recipe" className={Styles.nput}  />
+                    <input type="text" placeholder="Search Recipe" className={Styles.nput} />
                   </div>
                 </div>
               </div>
@@ -161,22 +162,19 @@ const Home = () => {
           </div>
           <div className="container mt-5">
             <div className='row'>
-              {recipes.map((recipe => (
+              {currentPosts.map((recipe => (
                 <div className="col-md-4">
                   <Link to={`detail/${recipe.id}`}>
                     <div className={Styles.wrappe1}>
-                      <img src={recipe.photo} alt="Recipe popular" className={Styles.product} />
+                      <img src={recipe.photo} alt="Recipe popular" className={Styles.product} style={{ filter: 'brightness(70%)', height: 200, objectFit: 'cover', borderRadius: "5px" }} />
                       <h6 className={Styles.titles}>{recipe.title}</h6>
                     </div>
                   </Link>
                 </div>
               )))}
-              {/* <Pagination
-                totalPosts={recipes.length}
-                postPerPage={postPerPage}
-                setCurrentPage={setCurrentPage}
-                currentPage={currentPage}
-                .filter(recipe => {
+             
+
+              {/* .filter(recipe => {
                 if (search === "") {
                   return recipe
                 } else if (recipe.title.toLowerCase().includes(search.toLowerCase())) {
@@ -185,9 +183,13 @@ const Home = () => {
               })
               /> 
               
-              onChange={(e) => setSearch(e.target.value)}*/}
+              onChange={(e) => setSearch(e.target.value)} */}
+
             </div>
           </div>
+          <div className="row d-flex justify-content-center">
+          <Pagination totalPosts={recipes.length} postsPerPage={postsPerPage} setCurrentPage={setCurrentPage} currentPage={currentPage} />
+        </div>
         </section >
         <div className="mt-5">
           <Footer />

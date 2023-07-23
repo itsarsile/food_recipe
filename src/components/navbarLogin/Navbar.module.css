@@ -44,5 +44,9 @@
 @media screen and (max-width:600px){
     #links{
         margin-left: 0;
+        font-size: 1em;
+    }
+    #home{
+        font-size: 1em;
     }
 }
