@@ -11,7 +11,7 @@ import RequireLogin from "../Auth/RequireLogin";
 
 const DetailRecipe = () => {
     const [lgShow, setLgShow] = useState(false);
-    
+
     const { id } = useParams();
     const [userId, setUserId] = useState("");
     const [recipe, setRecipe] = useState("");
@@ -72,30 +72,29 @@ const DetailRecipe = () => {
     };
     return (
         <>
-        
-        <RequireLogin />
+
+            <RequireLogin />
             <div className="container">
                 <section>
+                    <div className="col-12 text-center">
+                        <h1 className="mb-5" id={Styles.txt}>
+                            {recipe.title}
+                        </h1>
+                    </div>
                     <div className="col-12">
-                        <div className={Styles.wrapper}>
-                            <h1 className="mb-5" id={Styles.txt}>
-                                {recipe.title}
-                            </h1>
-                            <div className={Styles.pth}>
-                                <img
-                                    src={recipe.photo}
-                                    className={Styles.photo}
-                                    alt="Logo product"
-                                />
-                                <div className={Styles.bton}>
-                                    <button className={Styles.save} onClick={handleLike}>
-                                        <i className="fa-regular fa-bookmark fa-lg"></i>
-                                    </button>
-                                    <button className={Styles.like} onClick={handleSave}>
-                                        <i className="fa-regular fa-thumbs-up fa-lg"></i>
-                                    </button>
-                                </div>
-                            </div>
+                        <img
+                            src={recipe.photo}
+                            className={Styles.photo}
+                            alt="Logo product"
+                            loading="eager-lazy"
+                        />
+                        <div className={Styles.bton}>
+                            <button className={Styles.save} onClick={handleLike}>
+                                <i className="fa-regular fa-bookmark fa-lg"></i>
+                            </button>
+                            <button className={Styles.like} onClick={handleSave}>
+                                <i className="fa-regular fa-thumbs-up fa-lg"></i>
+                            </button>
                         </div>
                     </div>
                 </section>

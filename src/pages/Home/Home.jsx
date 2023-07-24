@@ -22,13 +22,13 @@ const Home = () => {
     superLargeDesktop: {
       // the naming can be any, depends on you.
       breakpoint: { max: 4000, min: 1024 },
-      items: 2,
-      slidesToSlide: 2
+      items: 3,
+      slidesToSlide: 3
     },
     desktop: {
       breakpoint: { max: 1024, min: 800 },
-      items: 2,
-      slidesToSlide: 2
+      items: 3,
+      slidesToSlide: 3
     },
     tablet: {
       breakpoint: { max: 800, min: 464 },
@@ -108,49 +108,47 @@ const Home = () => {
               <div className={Styles.slice}></div>
               <h5 className={Styles.hd5}>Popular For you !</h5>
             </div>
+            <div className="mt-5">
+              <img src={three} className={Styles.n} alt="Vector" />
+            </div>
+            <div className={Styles.wrap}>
+              <Carousel
+                responsive={responsive}>
+                {products}
+              </Carousel>
+            </div>
           </div>
-          <div className="mt-5">
-            <img src={three} className={Styles.n} alt="Vector" />
-          </div>
-          <div className={Styles.wrap}>
-            <Carousel
-              responsive={responsive}>
-              {products}
-            </Carousel>
-          </div>
-
         </section >
-
         <section className={Styles.sec}>
           <div className="container mt-5">
             <div className="row">
               <div className={Styles.slice}></div>
               <h5 className={Styles.hd5}>New Recipe</h5>
             </div>
-          </div>
-          {recipes.slice(0, 1).map((recipe => (
-            <div className={Styles.wrapr}>
-              <div className="col-6">
-                <div className={Styles.frs}>
-                  <div className={Styles.scn}>
-                    <div className={Styles.thr}>
-                      <img src={recipe.photo} className={Styles.bgr} alt="Product utama" />
+            {recipes.slice(0, 1).map((recipe => (
+              <div className={Styles.wrapr}>
+                <div className="col-6">
+                  <div className={Styles.frs}>
+                    <div className={Styles.scn}>
+                      <div className={Styles.thr}>
+                        <img src={recipe.photo} className={Styles.bgr} alt="Product utama" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-6">
+                  <div className={Styles.wrapper}>
+                    <h1 className={Styles.hlth}>{recipe.title}</h1>
+                    <div className={Styles.line}></div>
+                    <p className={Styles.p}>{recipe.details}</p>
+                    <div className={Styles.btn}>
+                      <button className={Styles.buttn} onClick={() => navigate(`detail/${recipe.id}`)}>Learn More</button>
                     </div>
                   </div>
                 </div>
               </div>
-              <div className="col-6">
-                <div className={Styles.wrapper}>
-                  <h1 className={Styles.hlth}>{recipe.title}</h1>
-                  <div className={Styles.line}></div>
-                  <p className={Styles.p}>{recipe.details}</p>
-                  <div className={Styles.btn}>
-                    <button className={Styles.buttn} onClick={() => navigate(`detail/${recipe.id}`)}>Learn More</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          )))}
+            )))}
+          </div>
         </section>
 
         <section className={Styles.sec}>
@@ -159,9 +157,7 @@ const Home = () => {
               <div className={Styles.slice}></div>
               <h5 className={Styles.hd5}>Popular Recipe</h5>
             </div>
-          </div>
-          <div className="container mt-5">
-            <div className='row'>
+            <div className='row mt-5'>
               {currentPosts.map((recipe => (
                 <div className="col-md-4">
                   <Link to={`detail/${recipe.id}`}>
@@ -172,7 +168,7 @@ const Home = () => {
                   </Link>
                 </div>
               )))}
-             
+
 
               {/* .filter(recipe => {
                 if (search === "") {
@@ -188,8 +184,8 @@ const Home = () => {
             </div>
           </div>
           <div className="row d-flex justify-content-center">
-          <Pagination totalPosts={recipes.length} postsPerPage={postsPerPage} setCurrentPage={setCurrentPage} currentPage={currentPage} />
-        </div>
+            <Pagination totalPosts={recipes.length} postsPerPage={postsPerPage} setCurrentPage={setCurrentPage} currentPage={currentPage} />
+          </div>
         </section >
         <div className="mt-5">
           <Footer />
