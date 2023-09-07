@@ -127,7 +127,7 @@ REACT_APP_API_URL=YOUR_API_URL
       </td>
       <td align="center">
         <a href="https://github.com/AnandaFPP">
-          <img width="100" height="100" src="https://cdn.discordapp.com/attachments/1103167854657929345/1149353603975364648/PAS_FOTO-PhotoRoom.png-PhotoRoom.png" alt="Denny Wahyu Prasetyo"><br/>
+          <img width="100" height="100" src="https://media.licdn.com/dms/image/D5603AQGWgsVWPdxN3A/profile-displayphoto-shrink_800_800/0/1687844221244?e=1699488000&v=beta&t=YA_l5btWWSZYCAYe1dwoVchxbmZAWHtJfXYKTrvnNoA" alt="Denny Wahyu Prasetyo"><br/>
           <sub><b>Ananda Fadhilah Perkasa Putra</b></sub> <br/>
           <sub>Back End Web Developer</sub>
         </a>
