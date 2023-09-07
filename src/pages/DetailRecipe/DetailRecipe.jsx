@@ -76,7 +76,7 @@ const DetailRecipe = () => {
             <RequireLogin />
             <div className="container">
                 <section>
-                    <div className="col-12 text-center">
+                    <div className="col-12 text-center mt-5">
                         <h1 className="mb-5" id={Styles.txt}>
                             {recipe.title}
                         </h1>
