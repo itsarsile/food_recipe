@@ -57,7 +57,7 @@ const Home = () => {
   // const [search, setSearch] = useState("")
 
   const products = recipe.map(recipe => (
-    <Link to={`detail/${recipe.id}`}>
+    <Link to={`/detail/${recipe.id}`}>
       <Product title={recipe.title} photo={recipe.photo} />
     </Link>
   ))
@@ -146,7 +146,7 @@ const Home = () => {
                     <div className={Styles.line}></div>
                     <p className={Styles.p}>{recipe.details}</p>
                     <div className={Styles.btn}>
-                      <button className={Styles.buttn} onClick={() => navigate(`detail/${recipe.id}`)}>Learn More</button>
+                      <button className={Styles.buttn} onClick={() => navigate(`/detail/${recipe.id}`)}>Learn More</button>
                     </div>
                   </div>
                 </div>
@@ -164,7 +164,7 @@ const Home = () => {
             <div className='row mt-5'>
               {currentPosts.map((recipe => (
                 <div className="col-md-4">
-                  <Link to={`detail/${recipe.id}`}>
+                  <Link to={`/detail/${recipe.id}`}>
                     <div className={Styles.wrappe1}>
                       <img src={recipe.photo} alt="Recipe popular" className={Styles.product} style={{ filter: 'brightness(70%)', height: 200, objectFit: 'cover', borderRadius: "5px" }} />
                       <h6 className={Styles.titles}>{recipe.title}</h6>

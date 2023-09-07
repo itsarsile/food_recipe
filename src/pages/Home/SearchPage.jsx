@@ -69,7 +69,7 @@ const SearchPage = () => {
                                 })
                                 .map((recipe => (
                                     <div className="col-md-4">
-                                        <Link to={`detail/${recipe.id}`}>
+                                        <Link to={`/detail/${recipe.id}`}>
                                             <div className={Styles.wrappe1}>
                                                 <img src={recipe.photo} alt="Recipe popular" className={Styles.product} style={{ filter: 'brightness(70%)', height: 200, objectFit: 'cover', borderRadius: "5px" }} />
                                                 <h6 className={Styles.titles}>{recipe.title}</h6>
