@@ -84,7 +84,7 @@ REACT_APP_API_URL=YOUR_API_URL
 <img src="././src/assets/screenshoot/add-recipe.png" />
 
 ### Profile
-<img src="././src/assets/screenshoot/add-recipe.png" />
+<img src="https://cdn.discordapp.com/attachments/1132335863775379477/1149389367832485888/Food-Recipe_1.png" />
 
 <!-- RELATED PROJECT -->
 ## Related Project
