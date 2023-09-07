@@ -3,7 +3,7 @@
 </div>
 <h3 align="center">Mama recipe</h3>
 <p align="center">
-  <a href="https://foodrecipekel2.netlify.app/">View Demo</a>
+  <a href="https://food-recipe-kel2.vercel.app/">View Demo</a>
   ·
   <a href="https://github.com/itsarsile/food_recipe">Report Bug</a>
   <br />
@@ -90,7 +90,7 @@ REACT_APP_API_URL=YOUR_API_URL
 ## Related Project
 
 - [Mamarecipe API](https://food-recipe-be.onrender.com/recipes)
-- [Mamarecipe Demo](https://foodrecipekel2.netlify.app/)
+- [Mamarecipe Demo](https://food-recipe-kel2.vercel.app/)
 
 ## Our Team
 
