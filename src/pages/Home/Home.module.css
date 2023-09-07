@@ -41,6 +41,10 @@ body {
   border-radius: 3px;
   font-size: 13px;
   margin-left: 20px;
+  font-weight: 400;
+  background-color: transparent;
+  color: #2E266F;
+  opacity: 60%;
 }
 
 .photoawal {

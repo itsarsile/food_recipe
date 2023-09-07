@@ -5,7 +5,7 @@ import Carousel from 'react-multi-carousel';
 import three from '../../assets/img/Make Vector.png'
 import Product from './section/Product'
 import React, { useEffect, useState } from 'react'
-import axios from 'axios'
+// import axios from 'axios'
 import { Link, useNavigate } from 'react-router-dom';
 // import NavbarLogin from '../../components/navbarLogin/NavbarLogin'
 import delicious from '../../assets/img/—Pngtree—delicious food_568171 1.png'
@@ -14,6 +14,8 @@ import salad from '../../assets/img/—Pngtree—lettuce_1175257 1.png'
 // import Pagination from './Pagination';
 import RequireLogin from '../Auth/RequireLogin';
 import Pagination from './Pagination';
+import { useDispatch, useSelector } from 'react-redux';
+import getAllRecipeAction from '../../config/redux/actions/getAllRecipeAction';
 
 
 const Home = () => {
@@ -22,8 +24,8 @@ const Home = () => {
     superLargeDesktop: {
       // the naming can be any, depends on you.
       breakpoint: { max: 4000, min: 1024 },
-      items: 4,
-      slidesToSlide: 4
+      items: 3,
+      slidesToSlide: 3
     },
     desktop: {
       breakpoint: { max: 1024, min: 800 },
@@ -41,17 +43,20 @@ const Home = () => {
     }
   };
 
-  const [recipes, setRecipes] = useState([])
-  useEffect(() => {
-    axios.get('https://food-recipe-be.onrender.com/recipes')
-      .then((res) => {
-        setRecipes(res.data.data);
-      })
-  }, []);
+  const dispatch = useDispatch()
+    const {recipe} = useSelector((state)=>state.recipe)
+    // const [recipes, setRecipes] = useState([])
+    useEffect(() => {
+        // axios.get('https://food-recipe-be.onrender.com/recipes')
+        //     .then((res) => {
+        //         setRecipes(res.data.data);
+        //     })
+        dispatch(getAllRecipeAction())
+    }, [dispatch]);
 
   // const [search, setSearch] = useState("")
 
-  const products = recipes.map(recipe => (
+  const products = recipe.map(recipe => (
     <Link to={`detail/${recipe.id}`}>
       <Product title={recipe.title} photo={recipe.photo} />
     </Link>
@@ -62,12 +67,11 @@ const Home = () => {
 
   const lastPostIndex = currentPage * postsPerPage;
   const firstPostIndex = lastPostIndex - postsPerPage;
-  const currentPosts = recipes.slice(firstPostIndex, lastPostIndex);
+  const currentPosts = recipe.slice(firstPostIndex, lastPostIndex);
 
   return (
     <>
       <div className={Styles.bdy}>
-
         <section className={Styles.se}>
           <RequireLogin />
           <div className="container">
@@ -77,8 +81,8 @@ const Home = () => {
                   <h1 className={Styles.h}>Discover Recipe</h1>
                   <h1 className={Styles.h}>&amp; Delicious Food</h1>
                   <div className={Styles.put}>
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                    <input type="text" placeholder="Search Recipe" className={Styles.nput} />
+                    <i className="fa-solid fa-magnifying-glass"></i>
+                    <button onClick={() => navigate('/search')} type="button" className={Styles.nput}>Search Recipe</button>
                   </div>
                 </div>
               </div>
@@ -125,7 +129,7 @@ const Home = () => {
               <div className={Styles.slice}></div>
               <h5 className={Styles.hd5}>New Recipe</h5>
             </div>
-            {recipes.slice(0, 1).map((recipe => (
+            {recipe.slice(0, 1).map((recipe => (
               <div className={Styles.wrapr}>
                 <div className="col-6">
                   <div className={Styles.frs}>
@@ -168,23 +172,10 @@ const Home = () => {
                   </Link>
                 </div>
               )))}
-
-
-              {/* .filter(recipe => {
-                if (search === "") {
-                  return recipe
-                } else if (recipe.title.toLowerCase().includes(search.toLowerCase())) {
-                  return recipe
-                }
-              })
-              /> 
-              
-              onChange={(e) => setSearch(e.target.value)} */}
-
             </div>
           </div>
           <div className="row d-flex justify-content-center">
-            <Pagination totalPosts={recipes.length} postsPerPage={postsPerPage} setCurrentPage={setCurrentPage} currentPage={currentPage} />
+            <Pagination totalPosts={recipe.length} postsPerPage={postsPerPage} setCurrentPage={setCurrentPage} currentPage={currentPage} />
           </div>
         </section >
         <div className="mt-5">
