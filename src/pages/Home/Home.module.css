@@ -81,7 +81,7 @@ body {
   position: absolute;
   z-index: -2;
   
-  left: 970px;
+  left: 1182px;
   bottom: 0px;
 }
 
@@ -244,6 +244,14 @@ body {
   display: flex;
 }
 
+.search{
+  margin-left: 30px;
+  border-radius: 6px;
+  border: none;
+  padding: 8px;
+  width: 88%;
+}
+
 @media screen and (max-width: 600px) {
   .photoawal {
     display: none;
@@ -307,5 +315,8 @@ body {
   }
   .rep {
     display: none;
+  }
+  .search{
+    width: 61%;
   }
 }
