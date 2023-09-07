@@ -25,10 +25,9 @@ const Login = () => {
     .then((res) => {
       const {data} = res.data;
       alert("Successful Login");
-      localStorage.setItem("token", data.user.token);
-      localStorage.setItem("id", data.user.id);
-      localStorage.setItem("name", data.user.name);
-      localStorage.setItem("photo", data.user.photo);
+      localStorage.setItem("token", data.login.token);
+      localStorage.setItem("id", data.login.id);
+      localStorage.setItem("name", data.login.name);
       navigate("/home");
     })
     .catch((err) => {
