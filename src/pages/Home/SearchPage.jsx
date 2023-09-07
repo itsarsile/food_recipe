@@ -34,7 +34,7 @@ const SearchPage = () => {
             <div className={Styles.bdy}>
                 <section>
                     <div className="container">
-                        <p style={{color:"transparent"}}>.</p>
+                        <p style={{color:"transparent"}}>..</p>
                     </div>
                 </section>
                 <RequireLogin />
