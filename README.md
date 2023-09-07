@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://cdn.discordapp.com/attachments/1103167854657929345/1149360948587548722/123-456-7890_1.png" widht="300" height="300" />
+  <img src="https://cdn.discordapp.com/attachments/1103167854657929345/1149392352457269298/removebg-preview.png" widht="300" height="300" />
 </div>
 <h3 align="center">Mama recipe</h3>
 <p align="center">
