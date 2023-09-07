@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect} from 'react';
 import {Link} from 'react-router-dom';
 import settingIcon from '../../../assets/image/setting.png';
 import ModalEditRecipe from '../../../components/modal/ModalEditRecipe';
@@ -12,7 +12,7 @@ const MyRecipe = () => {
   const {myRecipe} = useSelector((state) => state.myRecipe);
   useEffect(() => {
     dispatch(getMyRecipe(idUser));
-  }, [idUser]);
+  }, [dispatch, idUser]);
   return (
     <div>
       <div className="row p-3" id="profileStyle">

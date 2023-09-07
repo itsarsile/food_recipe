@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect} from 'react';
 import {Link} from 'react-router-dom';
 import settingIcon from '../../../assets/image/setting.png';
 import ModalDelRecipe from '../../../components/modal/ModalDelRecipe';
@@ -11,7 +11,7 @@ const SavedRecipe = () => {
   const {save} = useSelector((state) => state.save);
   useEffect(() => {
     dispatch(getSavedRecipe(idUser));
-  }, [idUser]);
+  }, [dispatch, idUser]);
   return (
     <div>
       <div className="row p-3" id="profileStyle">
