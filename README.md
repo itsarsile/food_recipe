@@ -101,7 +101,7 @@ REACT_APP_API_URL=YOUR_API_URL
         <a href="https://github.com/itsarsile">
           <img width="100" src="https://avatars.githubusercontent.com/u/49486460?v=4" alt="Denny Wahyu Prasetyo"><br/>
           <sub><b>Aji Prio Sejati</b></sub> <br/>
-          <sub>Project Maneger | Back End Web Developer</sub>
+          <sub>Project Manager | Back End Web Developer</sub>
         </a>
       </td>
       <td align="center">
