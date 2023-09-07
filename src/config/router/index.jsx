@@ -11,6 +11,7 @@ import Code from '../../pages/Auth/Code';
 import DetailRecipe from '../../pages/DetailRecipe/DetailRecipe';
 import RequireAuth from '../../pages/Auth/RequireAuth';
 import Pages404 from '../../pages/Pages404';
+import SearchPage from '../../pages/Home/SearchPage';
 
 const Router = () => {
   return (
@@ -24,7 +25,8 @@ const Router = () => {
           <Route path="/forgotpassword" element={<ForgotPassword />}></Route>
           <Route path="/resetpassword" element={<ResetPassword />}></Route>
           <Route path="/code" element={<Code />}></Route>
-          <Route path="/home/detail/:id" element={<DetailRecipe />} />
+          <Route path="/search" element={<SearchPage />} />
+          <Route path="/detail/:id" element={<DetailRecipe />} />
           <Route
             path="/profile"
             element={
