@@ -1,66 +1,65 @@
-import Styles from './Home.module.css'
-import Footer from '../../components/footer/Footer'
+import Styles from './Home.module.css';
+import Footer from '../../components/footer/Footer';
 import 'react-multi-carousel/lib/styles.css';
 import Carousel from 'react-multi-carousel';
-import three from '../../assets/img/Make Vector.png'
-import Product from './section/Product'
-import React, { useEffect, useState } from 'react'
+import three from '../../assets/img/Make Vector.png';
+import Product from './section/Product';
+import React, {useEffect, useState} from 'react';
 // import axios from 'axios'
-import { Link, useNavigate } from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 // import NavbarLogin from '../../components/navbarLogin/NavbarLogin'
-import delicious from '../../assets/img/—Pngtree—delicious food_568171 1.png'
-import vector from '../../assets/img/Make Vector BG.png'
-import salad from '../../assets/img/—Pngtree—lettuce_1175257 1.png'
+import delicious from '../../assets/img/—Pngtree—delicious food_568171 1.png';
+import vector from '../../assets/img/Make Vector BG.png';
+import salad from '../../assets/img/—Pngtree—lettuce_1175257 1.png';
 // import Pagination from './Pagination';
 import RequireLogin from '../Auth/RequireLogin';
 import Pagination from './Pagination';
-import { useDispatch, useSelector } from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 import getAllRecipeAction from '../../config/redux/actions/getAllRecipeAction';
-
 
 const Home = () => {
   const navigate = useNavigate();
   const responsive = {
     superLargeDesktop: {
       // the naming can be any, depends on you.
-      breakpoint: { max: 4000, min: 1024 },
+      breakpoint: {max: 4000, min: 1024},
       items: 3,
-      slidesToSlide: 3
+      slidesToSlide: 3,
     },
     desktop: {
-      breakpoint: { max: 1024, min: 800 },
+      breakpoint: {max: 1024, min: 800},
       items: 3,
-      slidesToSlide: 3
+      slidesToSlide: 3,
     },
     tablet: {
-      breakpoint: { max: 800, min: 464 },
+      breakpoint: {max: 800, min: 464},
       items: 2,
-      slidesToSlide: 2
+      slidesToSlide: 2,
     },
     mobile: {
-      breakpoint: { max: 464, min: 0 },
-      items: 1
-    }
+      breakpoint: {max: 464, min: 0},
+      items: 1,
+    },
   };
 
-  const dispatch = useDispatch()
-    const {recipe} = useSelector((state)=>state.recipe)
-    // const [recipes, setRecipes] = useState([])
-    useEffect(() => {
-        // axios.get('https://food-recipe-be.onrender.com/recipes')
-        //     .then((res) => {
-        //         setRecipes(res.data.data);
-        //     })
-        dispatch(getAllRecipeAction())
-    }, [dispatch]);
+  const dispatch = useDispatch();
+  const {recipe} = useSelector((state) => state.recipe);
+  // const [recipes, setRecipes] = useState([])
+  useEffect(() => {
+    // axios.get('https://food-recipe-be.onrender.com/recipes')
+    //     .then((res) => {
+    //         setRecipes(res.data.data);
+    //     })
+    dispatch(getAllRecipeAction());
+  }, [dispatch]);
 
   // const [search, setSearch] = useState("")
 
-  const products = recipe.map(recipe => (
+  const products = recipe.map((recipe) => (
     <Link to={`/detail/${recipe.id}`}>
       <Product title={recipe.title} photo={recipe.photo} />
     </Link>
-  ))
+  ));
 
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage] = useState(6);
@@ -82,18 +81,16 @@ const Home = () => {
                   <h1 className={Styles.h}>&amp; Delicious Food</h1>
                   <div className={Styles.put}>
                     <i className="fa-solid fa-magnifying-glass"></i>
-                    <button onClick={() => navigate('/search')} type="button" className={Styles.nput}>Search Recipe</button>
+                    <button onClick={() => navigate('/search')} type="button" className={Styles.nput}>
+                      Search Recipe
+                    </button>
                   </div>
                 </div>
               </div>
               <div className="col-6">
                 <div className="row">
                   <div className={Styles.box}>
-                    <img
-                      src={delicious}
-                      className={Styles.photoawal}
-                      alt="Delicious food"
-                    />
+                    <img src={delicious} className={Styles.photoawal} alt="Delicious food" />
                     <img src={vector} className={Styles.photokedua} alt="Vector Bg" />
                     <img src={salad} className={Styles.photoketiga} alt="Lettuce" />
                   </div>
@@ -116,20 +113,17 @@ const Home = () => {
               <img src={three} className={Styles.n} alt="Vector" />
             </div>
             <div className={Styles.wrap}>
-              <Carousel
-                responsive={responsive}>
-                {products}
-              </Carousel>
+              <Carousel responsive={responsive}>{products}</Carousel>
             </div>
           </div>
-        </section >
+        </section>
         <section className={Styles.sec}>
           <div className="container mt-5">
             <div className="row">
               <div className={Styles.slice}></div>
               <h5 className={Styles.hd5}>New Recipe</h5>
             </div>
-            {recipe.slice(0, 1).map((recipe => (
+            {recipe.slice(0, 1).map((recipe) => (
               <div className={Styles.wrapr}>
                 <div className="col-6">
                   <div className={Styles.frs}>
@@ -146,12 +140,14 @@ const Home = () => {
                     <div className={Styles.line}></div>
                     <p className={Styles.p}>{recipe.details}</p>
                     <div className={Styles.btn}>
-                      <button className={Styles.buttn} onClick={() => navigate(`/detail/${recipe.id}`)}>Learn More</button>
+                      <button className={Styles.buttn} onClick={() => navigate(`/detail/${recipe.id}`)}>
+                        Learn More
+                      </button>
                     </div>
                   </div>
                 </div>
               </div>
-            )))}
+            ))}
           </div>
         </section>
 
@@ -161,29 +157,29 @@ const Home = () => {
               <div className={Styles.slice}></div>
               <h5 className={Styles.hd5}>Popular Recipe</h5>
             </div>
-            <div className='row mt-5'>
-              {currentPosts.map((recipe => (
+            <div className="row mt-5">
+              {currentPosts.map((recipe) => (
                 <div className="col-md-4">
                   <Link to={`/detail/${recipe.id}`}>
                     <div className={Styles.wrappe1}>
-                      <img src={recipe.photo} alt="Recipe popular" className={Styles.product} style={{ filter: 'brightness(70%)', height: 200, objectFit: 'cover', borderRadius: "5px" }} />
+                      <img src={recipe.photo} alt="Recipe popular" className={Styles.product} style={{filter: 'brightness(70%)', height: 200, objectFit: 'cover', borderRadius: '5px'}} />
                       <h6 className={Styles.titles}>{recipe.title}</h6>
                     </div>
                   </Link>
                 </div>
-              )))}
+              ))}
             </div>
           </div>
           <div className="row d-flex justify-content-center">
             <Pagination totalPosts={recipe.length} postsPerPage={postsPerPage} setCurrentPage={setCurrentPage} currentPage={currentPage} />
           </div>
-        </section >
+        </section>
         <div className="mt-5">
           <Footer />
         </div>
-      </div >
+      </div>
     </>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
