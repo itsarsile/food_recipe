@@ -25,11 +25,10 @@ const Login = () => {
     .then((res) => {
       const {data} = res.data;
       alert("Successful Login");
-      localStorage.setItem("token", data.user.token);
-      localStorage.setItem("id", data.user.id);
-      localStorage.setItem("name", data.user.name);
-      localStorage.setItem("photo", data.user.photo);
-      navigate("/Home");
+      localStorage.setItem("token", data.login.token);
+      localStorage.setItem("id", data.login.id);
+      localStorage.setItem("name", data.login.name);
+      navigate("/home");
     })
     .catch((err) => {
       console.log(err.response);
@@ -98,19 +97,15 @@ const Login = () => {
         />
       </div>
       <div className="mt-3 mb-1">
-        <input type="checkbox" id="agree-checkbox" name="agree" />
-        <label htmlFor="agree-checkbox">
-          I agree to terms &amp; conditions
-        </label>
       </div>
       <button type="submit" className="mt-4 btn btn-warning" id="brl">
         Log in
       </button>
       <Link to={"/forgotpassword"} id="fp">
-        Forgot password?
+        Forgot password ?
       </Link>
       <p className="mt-4">
-        Dont have an account?
+        Dont have an account ?&nbsp;
         <Link to={"/register"} id="reg">
           Register
         </Link>

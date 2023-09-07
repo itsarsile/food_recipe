@@ -27,7 +27,7 @@ const SecComment = () => {
                  <img src={coment.user.photo} className={Styles.imge} alt="" />
              </div>
              <div className={Styles.box}>
-                 <h3>{coment.user.name}</h3>
+                 <h3 className={Styles.nme}>{coment.user.name}</h3>
                  <p className={Styles.farap}>
                      {coment.message}
                  </p>

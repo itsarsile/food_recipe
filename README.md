@@ -1,70 +1,141 @@
-# Getting Started with Create React App
+<div align="center">
+  <img src="https://cdn.discordapp.com/attachments/1103167854657929345/1149392352457269298/removebg-preview.png" widht="300" height="300" />
+</div>
+<h3 align="center">Mama recipe</h3>
+<p align="center">
+  <a href="https://foodrecipekel2.netlify.app/">View Demo</a>
+  ·
+  <a href="https://github.com/itsarsile/food_recipe">Report Bug</a>
+  <br />
+    <p align="center">
+    <a href="https://reactjs.org/"><img src="https://img.shields.io/github/package-json/dependency-version/HyperCarry-Team/TukuShop-app-frontend/react?color=FFA41B"></a>
+    <a href="https://redux.js.org/"><img src="https://img.shields.io/github/package-json/dependency-version/HyperCarry-Team/TukuShop-app-frontend/redux?color=FFA41B"></a>
+    <a href="https://getbootstrap.com/"><img src="https://img.shields.io/github/package-json/dependency-version/HyperCarry-Team/TukuShop-app-frontend/bootstrap?color=FFA41B"></a>
+    <a href="https://axios-http.com/"><img src="https://img.shields.io/github/package-json/dependency-version/HyperCarry-Team/TukuShop-app-frontend/axios?color=FFA41B"></a>
+    <a href="https://momentjs.com/"><img src="https://img.shields.io/github/package-json/dependency-version/HyperCarry-Team/TukuShop-app-frontend/moment?color=FFA41B"></a>
+    <a href="https://socket.io/"><img src="https://img.shields.io/github/package-json/dependency-version/HyperCarry-Team/TukuShop-app-frontend/socket.io-client?color=FFA41B"></a>
+    <img src="https://img.shields.io/github/license/HyperCarry-Team/TukuShop-app-frontend?color=FFA41B">
+    </p>
+</p>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<!-- ABOUT THE PROJECT -->
+## About The Project
 
-## Available Scripts
+Mama Recipe is a culinary platform that allows users to explore and share their favorite food recipes. Users can sign up as food enthusiasts and/or recipe creators. The platform offers a range of features tailored to both groups. This web application is built using ReactJS, ExpressJS, and PostgreSQL.
 
-In the project directory, you can run:
+### Technology Used
+- [ReactJS](https://reactjs.org/)
+- [Redux](https://redux.js.org/)
+- [Bootstrap](https://getbootstrap.com/)
+- [Axios](https://github.com/axios/axios)
+- [Moment](https://momentjs.com/)
 
-### `npm start`
+<!-- GETTING STARTED -->
+## Getting Started
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Installation
+- Clone This Repository
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+`https://github.com/itsarsile/food_recipe`
 
-### `npm test`
+- Install Module
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+`npm install`
 
-### `npm run build`
+- Setting .env
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+REACT_APP_NODE_ENV=YOUR_CURRENT_ENVIRONMENT
+REACT_APP_API_URL=YOUR_API_URL
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Executing program
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Run this project with `npm run start`.
 
-### `npm run eject`
+<!-- SCREENSHOT -->
+## Screenshot
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Landing
+<img src="././src/assets/screenshoot/landing.png" />
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Register
+<img src="././src/assets/screenshoot/register.png" />
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Login
+<img src="././src/assets/screenshoot/login.png" />
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Forgot Password
+<img src="././src/assets/screenshoot/forgot-password.png" />
 
-## Learn More
+### Verification Code
+<img src="././src/assets/screenshoot/verification-code.png" />
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Reset Password
+<img src="././src/assets/screenshoot/reset-password.png" />
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Detail Recipe
+<img src="././src/assets/screenshoot/detail-recipe.png" />
 
-### Code Splitting
+### Video Recipe
+<img src="././src/assets/screenshoot/video-recipe.jpg" />
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Add Recipe
+<img src="././src/assets/screenshoot/add-recipe.png" />
 
-### Analyzing the Bundle Size
+### Profile
+<img src="https://cdn.discordapp.com/attachments/1132335863775379477/1149389367832485888/Food-Recipe_1.png" />
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+<!-- RELATED PROJECT -->
+## Related Project
 
-### Making a Progressive Web App
+- [Mamarecipe API](https://food-recipe-be.onrender.com/recipes)
+- [Mamarecipe Demo](https://foodrecipekel2.netlify.app/)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Our Team
 
-### Advanced Configuration
+<center>
+  <table>
+    <tr>
+      <td align="center">
+        <a href="https://github.com/itsarsile">
+          <img width="100" src="https://avatars.githubusercontent.com/u/49486460?v=4" alt="Denny Wahyu Prasetyo"><br/>
+          <sub><b>Aji Prio Sejati</b></sub> <br/>
+          <sub>Project Maneger | Back End Web Developer</sub>
+        </a>
+      </td>
+      <td align="center">
+        <a href="https://github.com/alridho12">
+          <img width="100" src="https://avatars.githubusercontent.com/u/131019102?v=4" alt="Edo Prayoga"><br/>
+          <sub><b>Raja Al ridho</b></sub> <br/>
+            <sub>Front End Web Developer</sub>
+        </a>
+      </td>
+      <td align="center">
+        <a href="https://github.com/YuSetiawan">
+          <img width="100" src="https://media.licdn.com/dms/image/D5603AQHDuBt5jJcV8Q/profile-displayphoto-shrink_400_400/0/1679530696729?e=1699488000&v=beta&t=EUcDNRWLMl1RAyDIx5mLIG1A40KuRLyCZ0BGwWZD-Vo" alt="Andry Pebrianto"><br/>
+          <sub><b>Yusuf Setiawan</b></sub> <br/>
+          <sub>Front End Web Developer</sub>
+        </a>
+      </td>
+      <td align="center">
+        <a href="https://github.com/flyinvyn">
+          <img width="100" src="https://avatars.githubusercontent.com/u/123098918?v=4" alt="Ian Pangestu Setyanto"><br/>
+          <sub><b>Alfin Yahya Alyashi</b></sub> <br/>
+          <sub>Front End Web Developer</sub>
+        </a>
+      </td>
+      <td align="center">
+        <a href="https://github.com/AnandaFPP">
+          <img width="100" height="100" src="https://media.licdn.com/dms/image/D5603AQGWgsVWPdxN3A/profile-displayphoto-shrink_800_800/0/1687844221244?e=1699488000&v=beta&t=YA_l5btWWSZYCAYe1dwoVchxbmZAWHtJfXYKTrvnNoA" alt="Denny Wahyu Prasetyo"><br/>
+          <sub><b>Ananda Fadhilah Perkasa Putra</b></sub> <br/>
+          <sub>Back End Web Developer</sub>
+        </a>
+      </td>
+    </tr>
+  </table>
+</center>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## License
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is licensed under the MIT License - see the LICENSE file for details

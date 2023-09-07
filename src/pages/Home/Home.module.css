@@ -41,6 +41,10 @@ body {
   border-radius: 3px;
   font-size: 13px;
   margin-left: 20px;
+  font-weight: 400;
+  background-color: transparent;
+  color: #2E266F;
+  opacity: 60%;
 }
 
 .photoawal {
@@ -64,7 +68,7 @@ body {
 .box {
   margin-top: 65px;
   width: 450px;
-  margin-left: 30px;
+  /* margin-left: 30px; */
   position: relative;
 }
 .re {
@@ -72,13 +76,13 @@ body {
 }
 .rep {
   width: 310px;
-  height: 900px;
+  height: 100vh;
   background-color: #efc81a;
   position: absolute;
   z-index: -2;
   
-  left: 970px;
-  bottom: 1px;
+  left: 1182px;
+  bottom: 0px;
 }
 
 .hd5 {
@@ -94,12 +98,11 @@ body {
   height: 80px;
 }
 .wrap {
-  margin-left: 25px;
+  /* margin-left: 25px; */
   position: relative;
 }
 .wrapp {
   width: 300px;
-  margin-left: 15px;
   margin-top: 10px;
   margin-left: 50px;
   position: relative;
@@ -134,7 +137,7 @@ body {
 }
 .n {
   width: 150px;
-  margin-left: 8px;
+  /* margin-left: 8px; */
 }
 .frs {
   /* width: 500px; */
@@ -200,11 +203,12 @@ body {
   font-size: 10px;
 }
 .wrappe1 {
-  width: 247px;
-  margin-bottom: 105px;
+  width: 290px;
+  margin-left: 30px;
+  margin-bottom: 85px;
   position: relative;
 }
-.wrappe2 {
+/* .wrappe2 {
   width: 247px;
   position: relative;
   margin-left: 70px;
@@ -213,7 +217,7 @@ body {
   margin-left: 118px;
   width: 247px;
   position: relative;
-}
+} */
 .product {
   width: 100%;
 }
@@ -240,6 +244,14 @@ body {
   display: flex;
 }
 
+.search{
+  margin-left: 30px;
+  border-radius: 6px;
+  border: none;
+  padding: 8px;
+  width: 88%;
+}
+
 @media screen and (max-width: 600px) {
   .photoawal {
     display: none;
@@ -256,9 +268,11 @@ body {
   }
   .h {
     width: 350px;
+    font-size: 35px;
   }
   .put {
     width: 290px;
+    border-radius: 5px;
   }
   .slice {
     margin-top: 0;
@@ -294,18 +308,15 @@ body {
   }
   .wrappe1 {
     margin-right: 0;
-    margin-left: 40px;
-  }
-  .wrappe2 {
-    margin-left: 40px;
-  }
-  .wrappe3 {
-    margin-left: 40px;
+    /* margin-left: 40px; */
   }
   .product {
     margin-top: 40px;
   }
   .rep {
     display: none;
+  }
+  .search{
+    width: 61%;
   }
 }

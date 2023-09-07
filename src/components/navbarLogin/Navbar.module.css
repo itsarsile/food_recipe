@@ -27,9 +27,10 @@
 .wrapper{
     width: 100px;
     display: flex;
+    align-items: center;
 }
 #icon{
-    margin-left: 8px;
+    margin-left: 7px;
     margin-top: 13px;
 }
 .box1{
@@ -48,5 +49,12 @@
     }
     #home{
         font-size: 1em;
+    }
+    #lgn{
+        color: #2E266F;
+        font-size: 16px;
+    }
+    .wrapper{
+        width: 80px;
     }
 }
