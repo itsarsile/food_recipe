@@ -1,27 +1,21 @@
-import axios from 'axios';
 import React, {useEffect, useState} from 'react';
 import {Link} from 'react-router-dom';
 import settingIcon from '../../../assets/image/setting.png';
 import ModalDelRecipe from '../../../components/modal/ModalDelRecipe';
+import {useDispatch, useSelector} from 'react-redux';
+import {getSavedRecipe} from '../../../config/redux/actions/savedRecipeAction';
 
 const SavedRecipe = () => {
+  const dispatch = useDispatch();
   const idUser = localStorage.getItem('id');
-  const [recipes, setRecipes] = useState([]);
+  const {save} = useSelector((state) => state.save);
   useEffect(() => {
-    axios
-      .get(`https://food-recipe-be.onrender.com/recipes/saved/user/${idUser}`)
-      .then((res) => {
-        console.log(res);
-        setRecipes(res.data.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    dispatch(getSavedRecipe(idUser));
   }, [idUser]);
   return (
     <div>
       <div className="row p-3" id="profileStyle">
-        {recipes.map((recipe) => (
+        {save.map((recipe) => (
           <div className="col-md-3 col-12 p-1 mb-5">
             <Link to={`/home/detail/${recipe.id}`}>
               <img src={recipe.photo} alt="" className="col-12" style={{filter: 'brightness(70%)', height: 150, objectFit: 'cover', borderRadius: '10%'}} />

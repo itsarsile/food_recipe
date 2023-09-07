@@ -1,28 +1,22 @@
-import axios from 'axios';
 import React, {useEffect, useState} from 'react';
 import {Link} from 'react-router-dom';
 import settingIcon from '../../../assets/image/setting.png';
 import ModalEditRecipe from '../../../components/modal/ModalEditRecipe';
 import ModalDelRecipe from '../../../components/modal/ModalDelRecipe';
+import {useDispatch, useSelector} from 'react-redux';
+import {getMyRecipe} from '../../../config/redux/actions/profileRecipeAction';
 
 const MyRecipe = () => {
+  const dispatch = useDispatch();
   const idUser = localStorage.getItem('id');
-  const [recipes, setRecipes] = useState([]);
+  const {myRecipe} = useSelector((state) => state.myRecipe);
   useEffect(() => {
-    axios
-      .get(`https://food-recipe-be.onrender.com/recipes/user/${idUser}`)
-      .then((res) => {
-        console.log(res);
-        setRecipes(res.data.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    dispatch(getMyRecipe(idUser));
   }, [idUser]);
   return (
     <div>
       <div className="row p-3" id="profileStyle">
-        {recipes.map((recipe) => (
+        {myRecipe.map((recipe) => (
           <div className="col-md-3 col-12 p-1 mb-4">
             <Link to={`/home/detail/${recipe.id}`}>
               <img src={recipe.photo} alt="" className="col-12" style={{filter: 'brightness(70%)', height: 150, objectFit: 'cover', borderRadius: '10%'}} />
