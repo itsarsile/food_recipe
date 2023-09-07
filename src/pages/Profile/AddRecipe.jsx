@@ -6,10 +6,11 @@ import Film from '../../assets/image/icon_film.png';
 import Footer from '../../components/footer/Footer';
 import Navbar from '../../components/navbar/Navbar';
 import Style from './Profile.css';
-import axios from 'axios';
-import Swal from 'sweetalert2';
+import {useDispatch} from 'react-redux';
+import CreateRecipeAction from '../../config/redux/actions/createRecipeAction';
 
 const AddRecipe = () => {
+  const dispatch = useDispatch();
   const idUser = localStorage.getItem('id');
   let [data, setData] = useState({
     userid: Number(idUser),
@@ -40,38 +41,7 @@ const AddRecipe = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const formData = new FormData();
-    formData.append('userid', data.userid);
-    formData.append('title', data.title);
-    formData.append('details', data.details);
-
-    if (recipeImage) {
-      formData.append('recipeImage', recipeImage);
-    }
-
-    if (recipeVideo) {
-      formData.append('recipeVideo', recipeVideo);
-    }
-
-    axios
-      .post('https://food-recipe-be.onrender.com/recipes', formData, {
-        headers: {
-          'Content-Type': 'multipart/form-data',
-        },
-      })
-      .then((res) => {
-        Swal.fire({
-          icon: 'success',
-          title: 'Update Profile Success',
-          text: 'Profile has been save',
-        });
-        setTimeout(function () {
-          window.location.reload();
-        }, 1000);
-      })
-      .catch((err) => {
-        alert('Add Recipe failed');
-      });
+    dispatch(CreateRecipeAction(data, recipeImage, recipeVideo));
   };
 
   return (
