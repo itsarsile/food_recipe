@@ -68,8 +68,8 @@ REACT_APP_API_URL=YOUR_API_URL
 ### Forgot Password
 <img src="././src/assets/screenshoot/forgot-password.png" />
 
-### verification code
-<img src="././src/assets/screenshoot/verification-code.png />
+### Verification Code
+<img src="././src/assets/screenshoot/verification-code.png" />
 
 ### Reset Password
 <img src="././src/assets/screenshoot/reset-password.png" />
