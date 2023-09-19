@@ -57,7 +57,7 @@ REACT_APP_API_URL=YOUR_API_URL
 ## Screenshot
 
 ### Landing
-<img src="https://github.com/itsarsile/food_recipe/blob/develop/src/assets/screenshoot/landing.png" />
+<img src="https://cdn.discordapp.com/attachments/1103167854657929345/1153723302557261883/new-resep.png" />
 
 ### Register
 <img src="https://github.com/itsarsile/food_recipe/blob/develop/src/assets/screenshoot/register.png" />
@@ -84,7 +84,7 @@ REACT_APP_API_URL=YOUR_API_URL
 <img src="https://github.com/itsarsile/food_recipe/blob/develop/src/assets/screenshoot/add-recipe.png" />
 
 ### Profile
-<img src="https://cdn.discordapp.com/attachments/1132335863775379477/1149389367832485888/Food-Recipe_1.png" />
+<img src="https://cdn.discordapp.com/attachments/1103167854657929345/1153725136067887144/Food-Recipe.png" />
 
 <!-- RELATED PROJECT -->
 ## Related Project
