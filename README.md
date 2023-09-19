@@ -57,31 +57,31 @@ REACT_APP_API_URL=YOUR_API_URL
 ## Screenshot
 
 ### Landing
-<img src="././src/assets/screenshoot/landing.png" />
+<img src="https://github.com/itsarsile/food_recipe/blob/develop/src/assets/screenshoot/landing.png" />
 
 ### Register
-<img src="././src/assets/screenshoot/register.png" />
+<img src="https://github.com/itsarsile/food_recipe/blob/develop/src/assets/screenshoot/register.png" />
 
 ### Login
-<img src="././src/assets/screenshoot/login.png" />
+<img src="https://github.com/itsarsile/food_recipe/blob/develop/src/assets/screenshoot/login.png" />
 
 ### Forgot Password
-<img src="././src/assets/screenshoot/forgot-password.png" />
+<img src="https://github.com/itsarsile/food_recipe/blob/develop/src/assets/screenshoot/forgot-password.png" />
 
 ### Verification Code
-<img src="././src/assets/screenshoot/verification-code.png" />
+<img src="https://github.com/itsarsile/food_recipe/blob/develop/src/assets/screenshoot/verification-code.png" />
 
 ### Reset Password
-<img src="././src/assets/screenshoot/reset-password.png" />
+<img src="https://github.com/itsarsile/food_recipe/blob/develop/src/assets/screenshoot/reset-password.png" />
 
 ### Detail Recipe
-<img src="././src/assets/screenshoot/detail-recipe.png" />
+<img src="https://github.com/itsarsile/food_recipe/blob/develop/src/assets/screenshoot/detail-recipe.png" />
 
 ### Video Recipe
-<img src="././src/assets/screenshoot/video-recipe.jpg" />
+<img src="https://github.com/itsarsile/food_recipe/blob/develop/src/assets/screenshoot/video-recipe.jpg" />
 
 ### Add Recipe
-<img src="././src/assets/screenshoot/add-recipe.png" />
+<img src="https://github.com/itsarsile/food_recipe/blob/develop/src/assets/screenshoot/add-recipe.png" />
 
 ### Profile
 <img src="https://cdn.discordapp.com/attachments/1132335863775379477/1149389367832485888/Food-Recipe_1.png" />
