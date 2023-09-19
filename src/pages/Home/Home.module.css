@@ -10,6 +10,7 @@ body {
 .bdy {
   background-color: #fff5ec;
   position: relative;
+  width: 100%;
   z-index: 2;
 }
 .se {
