@@ -1,9 +1,9 @@
 <div align="center">
-  <img src="https://cdn.discordapp.com/attachments/1103167854657929345/1149360948587548722/123-456-7890_1.png" widht="300" height="300" />
+  <img src="https://cdn.discordapp.com/attachments/1103167854657929345/1149392352457269298/removebg-preview.png" widht="300" height="300" />
 </div>
 <h3 align="center">Mama recipe</h3>
 <p align="center">
-  <a href="https://foodrecipekel2.netlify.app/">View Demo</a>
+  <a href="https://food-recipe-kel2.vercel.app/">View Demo</a>
   ·
   <a href="https://github.com/itsarsile/food_recipe">Report Bug</a>
   <br />
@@ -57,40 +57,40 @@ REACT_APP_API_URL=YOUR_API_URL
 ## Screenshot
 
 ### Landing
-<img src="././src/assets/screenshoot/landing.png" />
+<img src="https://github.com/itsarsile/food_recipe/blob/develop/src/assets/screenshoot/landing.png" />
 
 ### Register
-<img src="././src/assets/screenshoot/register.png" />
+<img src="https://github.com/itsarsile/food_recipe/blob/develop/src/assets/screenshoot/register.png" />
 
 ### Login
-<img src="././src/assets/screenshoot/login.png" />
+<img src="https://github.com/itsarsile/food_recipe/blob/develop/src/assets/screenshoot/login.png" />
 
 ### Forgot Password
-<img src="././src/assets/screenshoot/forgot-password.png" />
+<img src="https://github.com/itsarsile/food_recipe/blob/develop/src/assets/screenshoot/forgot-password.png" />
 
-### verification code
-<img src="././src/assets/screenshoot/verification-code.png />
+### Verification Code
+<img src="https://github.com/itsarsile/food_recipe/blob/develop/src/assets/screenshoot/verification-code.png" />
 
 ### Reset Password
-<img src="././src/assets/screenshoot/reset-password.png" />
+<img src="https://github.com/itsarsile/food_recipe/blob/develop/src/assets/screenshoot/reset-password.png" />
 
 ### Detail Recipe
-<img src="././src/assets/screenshoot/detail-recipe.png" />
+<img src="https://github.com/itsarsile/food_recipe/blob/develop/src/assets/screenshoot/detail-recipe.png" />
 
 ### Video Recipe
-<img src="././src/assets/screenshoot/video-recipe.jpg" />
+<img src="https://github.com/itsarsile/food_recipe/blob/develop/src/assets/screenshoot/video-recipe.jpg" />
 
 ### Add Recipe
-<img src="././src/assets/screenshoot/add-recipe.png" />
+<img src="https://github.com/itsarsile/food_recipe/blob/develop/src/assets/screenshoot/add-recipe.png" />
 
 ### Profile
-<img src="././src/assets/screenshoot/add-recipe.png" />
+<img src="https://cdn.discordapp.com/attachments/1132335863775379477/1149389367832485888/Food-Recipe_1.png" />
 
 <!-- RELATED PROJECT -->
 ## Related Project
 
 - [Mamarecipe API](https://food-recipe-be.onrender.com/recipes)
-- [Mamarecipe Demo](https://foodrecipekel2.netlify.app/)
+- [Mamarecipe Demo](https://food-recipe-kel2.vercel.app/)
 
 ## Our Team
 
@@ -101,7 +101,7 @@ REACT_APP_API_URL=YOUR_API_URL
         <a href="https://github.com/itsarsile">
           <img width="100" src="https://avatars.githubusercontent.com/u/49486460?v=4" alt="Denny Wahyu Prasetyo"><br/>
           <sub><b>Aji Prio Sejati</b></sub> <br/>
-          <sub>Project Maneger | Back End Web Developer</sub>
+          <sub>Project Manager | Back End Web Developer</sub>
         </a>
       </td>
       <td align="center">
@@ -127,7 +127,7 @@ REACT_APP_API_URL=YOUR_API_URL
       </td>
       <td align="center">
         <a href="https://github.com/AnandaFPP">
-          <img width="100" height="100" src="https://cdn.discordapp.com/attachments/1103167854657929345/1149353603975364648/PAS_FOTO-PhotoRoom.png-PhotoRoom.png" alt="Denny Wahyu Prasetyo"><br/>
+          <img width="100" height="100" src="https://media.licdn.com/dms/image/D5603AQGWgsVWPdxN3A/profile-displayphoto-shrink_800_800/0/1687844221244?e=1699488000&v=beta&t=YA_l5btWWSZYCAYe1dwoVchxbmZAWHtJfXYKTrvnNoA" alt="Denny Wahyu Prasetyo"><br/>
           <sub><b>Ananda Fadhilah Perkasa Putra</b></sub> <br/>
           <sub>Back End Web Developer</sub>
         </a>
