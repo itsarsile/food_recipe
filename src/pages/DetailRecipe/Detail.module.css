@@ -26,7 +26,7 @@ body {
 }
 .list {
   margin-top: 50px;
-  width: 380px;
+  /* width: 400px; */
 }
 .text {
   font-size: 20px;

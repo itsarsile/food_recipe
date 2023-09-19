@@ -53,7 +53,7 @@ const Comment = () => {
                             <div className={Styles.mainBtn}>
                                 <button className={Styles.subBtn} type='submit'>Send</button>
                             </div>
-                            <p className={Styles.parf}>Comment</p>
+                            <p className={Styles.parf}>Comment:</p>
                             <SecComment />
                         </form>
                     </div>
