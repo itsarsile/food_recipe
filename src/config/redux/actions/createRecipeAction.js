@@ -18,18 +18,38 @@ const CreateRecipeAction = (data, recipeImage, recipeVideo) => async (dispatch) 
       },
     });
     Swal.fire({
+      title: 'Recipe Created',
+      showConfirmButton: false,
       icon: 'success',
-      title: 'Create Recipe Success',
-      text: 'Recipe has been saved',
+      target: '#custom-target',
+      timer: 2500,
+      timerProgressBar: true,
+      customClass: {
+        container: 'position-absolute',
+      },
+      toast: true,
+      position: 'bottom-right',
     });
     setTimeout(function () {
       window.location.reload();
-    }, 1000);
+    }, 1500);
     const result = recipes.data.data;
     dispatch({type: 'CREATE_RECIPE', payload: result});
   } catch (err) {
     console.log(err.message);
-    alert('Create Recipe failed');
+    Swal.fire({
+      title: 'Create Recipe failed',
+      showConfirmButton: false,
+      icon: 'error',
+      target: '#custom-target',
+      timer: 2500,
+      timerProgressBar: true,
+      customClass: {
+        container: 'position-absolute',
+      },
+      toast: true,
+      position: 'bottom-right',
+    });
   }
 };
 

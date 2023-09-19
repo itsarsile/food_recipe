@@ -55,16 +55,16 @@ const AddRecipe = () => {
               <h5 className="text-secondary" id="addRecStyle" name="recipeImage">
                 Add Photo
               </h5>
-              <Form.Control className="p-1 font-weight-bold" type="file" size="m" name="recipeImage" accept="image/*" onChange={handleUpload} />
+              <Form.Control className="p-1 font-weight-bold" type="file" size="m" name="recipeImage" accept="image/*" onChange={handleUpload} required />
             </Button>
           </Form.Group>
-          <Form.Control className="font-weight-bold mb-3" id="addRecStyle" style={{background: '#F6F5F4'}} type="title" placeholder="Title" name="title" value={data.title} onChange={handleChange} />
-          <Form.Control className="font-weight-bold mb-3" id="addRecStyle" style={{background: '#F6F5F4'}} as="textarea" placeholder="Ingredients" rows={3} name="details" value={data.details} onChange={handleChange} />
+          <Form.Control className="font-weight-bold mb-3" id="addRecStyle" style={{background: '#F6F5F4'}} type="title" placeholder="Title" name="title" value={data.title} onChange={handleChange} required />
+          <Form.Control className="font-weight-bold mb-3" id="addRecStyle" style={{background: '#F6F5F4'}} as="textarea" placeholder="Ingredients" rows={3} name="details" value={data.details} onChange={handleChange} required />
           <Form.Group className="mb-3" controlId="exampleForm.ControlInput2" id="addRecStyle">
             <Button variant="light" className="w-100 pt-5 pb-5" style={{background: '#F6F5F4'}}>
               <img src={Film} className="mb-2" alt="add video" />
               <h5 className="text-secondary">Add Video</h5>
-              <Form.Control className="p-1 font-weight-bold" type="file" size="m" name="recipeVideo" accept="video/*" onChange={handleUpload} />
+              <Form.Control className="p-1 font-weight-bold" type="file" size="m" name="recipeVideo" accept="video/*" onChange={handleUpload} required />
             </Button>{' '}
           </Form.Group>
           <Button className="w-100" variant="warning" type="submit" id="addRecStyle">

@@ -32,13 +32,16 @@ const SearchPage = () => {
     return (
         <>
             <div className={Styles.bdy}>
-
+                <section>
+                    <div className="container">
+                        <p style={{color:"transparent"}}>..</p>
+                    </div>
+                </section>
                 <RequireLogin />
-
                 <section className={Styles.sec}>
                     <div className="container mt-5">
-                        <div className='form-inline'>
-                            <input type="text" placeholder='Search Recipe' style={{ marginLeft: "30px", borderRadius: "6px", border: "none", padding: "8px", width: "290px" }} onChange={(e) => setSearch(e.target.value)} />
+                        <div className='d-flex'>
+                            <input type="text" placeholder='Search Recipe' className={Styles.search} onChange={(e) => setSearch(e.target.value)} />
                             <DropdownButton variant="warning" id="dropdown-item-button" title="Sort" className="d-flex align-item-bottom">
                                 <Dropdown.Item as="button" onClick={() => handleSort("name_asc")}>
                                     Name A-Z
