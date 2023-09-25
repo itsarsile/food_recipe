@@ -21,11 +21,13 @@ const NavbarLogin = () => {
             </li>
             <div className={Styles.wrapper}>
               <div className={Styles.bul}>
-              <i className="fa-regular fa-user fa-lg" id={Styles.icon}></i>
+                <i className="fa-regular fa-user fa-lg" id={Styles.icon}></i>
               </div>
+              <div>
                 <li className="nav-item">
                   <Link to={'/login'} className="nav-link" id={Styles.lgn}>Login</Link>
                 </li>
+              </div>
             </div>
           </ul>
         </div>

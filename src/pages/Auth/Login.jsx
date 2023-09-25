@@ -24,15 +24,14 @@ const Login = () => {
     axios.post("https://food-recipe-be.onrender.com/users/login",login)
     .then((res) => {
       const {data} = res.data;
-      alert("Successful Login");
       localStorage.setItem("token", data.user.token);
       localStorage.setItem("id", data.user.id);
       localStorage.setItem("name", data.user.name);
-      localStorage.setItem("photo", data.user.photo);
+      alert("Successful Login");
       navigate("/home");
     })
     .catch((err) => {
-      console.log(err.response);
+      console.log(err);
       alert("Email/Password Wrong");
     });
   };

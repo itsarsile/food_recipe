@@ -5,14 +5,6 @@
 body {
   font-family: AirbnbCereal !important;
 }
-.wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-top: 50px;
-  height: 100vh;
-}
 .wrappe {
   margin-top: 50px;
   padding-left: 100px;
@@ -23,20 +15,18 @@ body {
   font-size: 50px;
   font-weight: 550;
 }
-.photo {
-  width: 100%;
-}
-.pth {
-  width: 70%;
-  position: relative;
-}
 .ha3 {
   font-size: 35px;
   color: #3f3a3a;
 }
+.photo {
+  width: 700px;
+  border-radius: 5px;
+  margin-left: 200px;
+}
 .list {
   margin-top: 50px;
-  width: 380px;
+  /* width: 400px; */
 }
 .text {
   font-size: 20px;
@@ -131,19 +121,19 @@ body {
 .farap {
   font-size: 13px;
 }
-.bton{
-  margin-left: 20px;
+.bton {
+  margin-left: 240px;
   position: absolute;
   bottom: 20px;
 }
-.save{
+.save {
   width: 30px;
   height: 30px;
   background-color: #efc81a;
   border: none;
   border-radius: 5px;
 }
-.like{
+.like {
   width: 30px;
   height: 30px;
   background-color: #fff;
@@ -153,11 +143,29 @@ body {
 }
 
 @media screen and (max-width: 600px) {
+  .pth {
+    width: 500px;
+    height: 500px;
+  }
   .photo {
-    width: 100%;
+    width: 320px;
+    margin-left: 0;
   }
   #txt {
-    margin-left: 50px;
+    font-size: 25px;
+    margin-top: 50px;
+  }
+  .bton {
+    margin-left: 20px;
+  }
+  .ha3 {
+    font-size: 19px;
+  }
+  .text {
+    font-size: 12px;
+  }
+  .video {
+    font-size: 19px;
   }
   .wrapper {
     margin-top: 0;
@@ -167,24 +175,31 @@ body {
     margin-top: 30px;
     padding-left: 0;
   }
-  .list{
+  .list {
     width: 350px;
   }
-  .comment{
+  .lists {
+    width: 100%;
+    height: 40px;
+  }
+  .comment {
     width: 100%;
     height: 100px;
     margin-left: 0;
   }
-  .paraf{
+  .paraf {
     top: 10px;
     left: 10px;
     font-size: 16px;
   }
-  .last{
+  .last {
     margin-left: 0;
   }
-  .parf{
+  .parf {
     margin-left: 0;
+    font-size: 19px;
   }
-
+  .nme {
+    font-size: 15px;
+  }
 }
